@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface CheckPointViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>{
 
 	IBOutlet UITableView *mTable;

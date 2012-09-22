@@ -9,6 +9,8 @@
 #import "RouteViewController.h"
 #import "MapViewController.h"
 
+#define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
+
 @interface RouteViewController(Private)
 -(void)releaseAllViews;
 -(void)customInitialization;
@@ -28,6 +30,8 @@
 -(void)customInitialization
 {
 	// do the initialization of class variables here..
+    coordinatesFrom = k_CoordinatesDefault;
+    coordinatesTo   = k_CoordinatesDefault;
 }
 
 @end
@@ -46,6 +50,7 @@
 	if( self)
 	{
 		[self customInitialization];
+        
 	}
 	return self;
 }
@@ -97,20 +102,6 @@
 //	self.sourceCity.text = nil;
 }
 
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
 - (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -120,7 +111,39 @@
 
 - (void)getCurrentLocation:(UIButton*)sender {
     NSLog(@"BTN PRESSED");
+    
+    //Use Current location by GPS
+    geocoder = [[CLGeocoder alloc] init];
+    lm = [[CLLocationManager alloc]init];
+    lm.delegate = (id)self;
+    [lm startUpdatingLocation];
+    
+    NSLog(@"geocoder = %@", geocoder);
+    NSLog(@"latitude = %f ,longitude = %f", lm.location.coordinate.latitude, lm.location.coordinate.longitude);
+    
+    //Block address
+    [geocoder reverseGeocodeLocation: lm.location completionHandler:
+     ^(NSArray *placemarks, NSError *error) {
+         
+         //Get address
+         CLPlacemark *placemark = [placemarks objectAtIndex:0];
+         
+         NSLog(@"Placemark array: %@",placemark.addressDictionary );
+         
+         //String to address
+         NSString *locatedaddress = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
+         
+         //Print the location in the console
+         NSLog(@"Currently address is: %@",locatedaddress);
+         
+         NSString *streetName = [placemark.addressDictionary objectForKey:@"Street"];
+         
+         if (sender == _btnGetLocationCurrentFrom) mSourceCity.text = streetName;
+         else if (sender == _btnGetLocationCurrentTo) mDestinationCity.text = streetName;
+         
+     }];
 }
+
 
 #pragma mark UITextFieldDelegate Methods
 

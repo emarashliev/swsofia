@@ -113,7 +113,7 @@ static UICGDirections *sharedDirections;
 - (void)loadWithStartPoint:(NSString *)startPoint endPoint:(NSMutableArray *)endPoints options:(UICGDirectionsOptions *)options {
 	for (int idx = 0; idx < [endPoints count];idx ++) 
 	{
-		NSString* msg = [NSString stringWithFormat:@"loadDirections('%@', '%@', %@)", startPoint, [endPoints objectAtIndex:idx], [options JSONRepresentation]];
+		NSString* msg = [NSString stringWithFormat:@"loadDirections('sofia %@', 'sofia %@', %@)", startPoint, [endPoints objectAtIndex:idx], [options JSONRepresentation]];
 		mstr = [msg retain];
 		[self performSelector:@selector(loadDirections:)  withObject:msg afterDelay:idx+1];
 	}

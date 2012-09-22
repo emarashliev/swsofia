@@ -18,7 +18,7 @@
 {
 	self = [super init];
 	if (self != nil) {
-		self.mCityName = @"";
+		self.mCityName = @"Sofia";
 		self.mCityDescription = @"";
 	}
 	return self;
