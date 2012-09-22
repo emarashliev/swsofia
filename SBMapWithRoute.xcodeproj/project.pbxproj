@@ -7,6 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		141F6698160E3B54002BBCCC /* routs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 141F6697160E3B54002BBCCC /* routs.plist */; };
+		141F669A160E3BBD002BBCCC /* fells_loop.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 141F6699160E3BBD002BBCCC /* fells_loop.gpx */; };
+		146BBF8D160DE149004CCE02 /* ResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBF8B160DE148004CCE02 /* ResultViewController.m */; };
+		146BBF9C160DE410004CCE02 /* GCRetractableSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBF92160DE410004CCE02 /* GCRetractableSectionController.m */; };
+		146BBF9D160DE410004CCE02 /* DownAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF94160DE410004CCE02 /* DownAccessory.png */; };
+		146BBF9E160DE410004CCE02 /* DownAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF95160DE410004CCE02 /* DownAccessory@2x.png */; };
+		146BBF9F160DE410004CCE02 /* DownAccessoryWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF96160DE410004CCE02 /* DownAccessoryWhite.png */; };
+		146BBFA0160DE410004CCE02 /* DownAccessoryWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF97160DE410004CCE02 /* DownAccessoryWhite@2x.png */; };
+		146BBFA1160DE410004CCE02 /* UpAccessory.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF98160DE410004CCE02 /* UpAccessory.png */; };
+		146BBFA2160DE410004CCE02 /* UpAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF99160DE410004CCE02 /* UpAccessory@2x.png */; };
+		146BBFA3160DE410004CCE02 /* UpAccessoryWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF9A160DE410004CCE02 /* UpAccessoryWhite.png */; };
+		146BBFA4160DE410004CCE02 /* UpAccessoryWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF9B160DE410004CCE02 /* UpAccessoryWhite@2x.png */; };
+		146BBFAA160DFBB8004CCE02 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */; };
+		146BBFB3160DFD5E004CCE02 /* GCArraySectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBFAE160DFD5E004CCE02 /* GCArraySectionController.m */; };
+		146BBFB4160DFD5E004CCE02 /* GCEmptySectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBFB1160DFD5E004CCE02 /* GCEmptySectionController.m */; };
+		146BBFB7160DFD68004CCE02 /* GCCustomSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBFB5160DFD68004CCE02 /* GCCustomSectionController.m */; };
+		146BBFB8160DFD68004CCE02 /* GCSimpleSectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146BBFB6160DFD68004CCE02 /* GCSimpleSectionController.m */; };
 		1D3623260D0F684500981E51 /* MapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -43,6 +60,29 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		141F6697160E3B54002BBCCC /* routs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = routs.plist; sourceTree = "<group>"; };
+		141F6699160E3BBD002BBCCC /* fells_loop.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = fells_loop.gpx; sourceTree = "<group>"; };
+		146BBF8A160DE148004CCE02 /* ResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultViewController.h; sourceTree = "<group>"; };
+		146BBF8B160DE148004CCE02 /* ResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultViewController.m; sourceTree = "<group>"; };
+		146BBF91160DE410004CCE02 /* GCRetractableSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCRetractableSectionController.h; sourceTree = "<group>"; };
+		146BBF92160DE410004CCE02 /* GCRetractableSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCRetractableSectionController.m; sourceTree = "<group>"; };
+		146BBF94160DE410004CCE02 /* DownAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownAccessory.png; sourceTree = "<group>"; };
+		146BBF95160DE410004CCE02 /* DownAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DownAccessory@2x.png"; sourceTree = "<group>"; };
+		146BBF96160DE410004CCE02 /* DownAccessoryWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DownAccessoryWhite.png; sourceTree = "<group>"; };
+		146BBF97160DE410004CCE02 /* DownAccessoryWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DownAccessoryWhite@2x.png"; sourceTree = "<group>"; };
+		146BBF98160DE410004CCE02 /* UpAccessory.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessory.png; sourceTree = "<group>"; };
+		146BBF99160DE410004CCE02 /* UpAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessory@2x.png"; sourceTree = "<group>"; };
+		146BBF9A160DE410004CCE02 /* UpAccessoryWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessoryWhite.png; sourceTree = "<group>"; };
+		146BBF9B160DE410004CCE02 /* UpAccessoryWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessoryWhite@2x.png"; sourceTree = "<group>"; };
+		146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
+		146BBFAD160DFD5E004CCE02 /* GCArraySectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCArraySectionController.h; sourceTree = "<group>"; };
+		146BBFAE160DFD5E004CCE02 /* GCArraySectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCArraySectionController.m; sourceTree = "<group>"; };
+		146BBFAF160DFD5E004CCE02 /* GCCustomSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCCustomSectionController.h; sourceTree = "<group>"; };
+		146BBFB0160DFD5E004CCE02 /* GCEmptySectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCEmptySectionController.h; sourceTree = "<group>"; };
+		146BBFB1160DFD5E004CCE02 /* GCEmptySectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCEmptySectionController.m; sourceTree = "<group>"; };
+		146BBFB2160DFD5E004CCE02 /* GCSimpleSectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCSimpleSectionController.h; sourceTree = "<group>"; };
+		146BBFB5160DFD68004CCE02 /* GCCustomSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCCustomSectionController.m; sourceTree = "<group>"; };
+		146BBFB6160DFD68004CCE02 /* GCSimpleSectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCSimpleSectionController.m; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAppDelegate.m; sourceTree = "<group>"; };
@@ -130,6 +170,46 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		146BBF90160DE410004CCE02 /* GCRetractableSectionController */ = {
+			isa = PBXGroup;
+			children = (
+				146BBF91160DE410004CCE02 /* GCRetractableSectionController.h */,
+				146BBF92160DE410004CCE02 /* GCRetractableSectionController.m */,
+				146BBF93160DE410004CCE02 /* Images */,
+			);
+			path = GCRetractableSectionController;
+			sourceTree = "<group>";
+		};
+		146BBF93160DE410004CCE02 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				146BBF94160DE410004CCE02 /* DownAccessory.png */,
+				146BBF95160DE410004CCE02 /* DownAccessory@2x.png */,
+				146BBF96160DE410004CCE02 /* DownAccessoryWhite.png */,
+				146BBF97160DE410004CCE02 /* DownAccessoryWhite@2x.png */,
+				146BBF98160DE410004CCE02 /* UpAccessory.png */,
+				146BBF99160DE410004CCE02 /* UpAccessory@2x.png */,
+				146BBF9A160DE410004CCE02 /* UpAccessoryWhite.png */,
+				146BBF9B160DE410004CCE02 /* UpAccessoryWhite@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		146BBFAC160DFD09004CCE02 /* Retractable */ = {
+			isa = PBXGroup;
+			children = (
+				146BBFB5160DFD68004CCE02 /* GCCustomSectionController.m */,
+				146BBFB6160DFD68004CCE02 /* GCSimpleSectionController.m */,
+				146BBFAD160DFD5E004CCE02 /* GCArraySectionController.h */,
+				146BBFAE160DFD5E004CCE02 /* GCArraySectionController.m */,
+				146BBFAF160DFD5E004CCE02 /* GCCustomSectionController.h */,
+				146BBFB0160DFD5E004CCE02 /* GCEmptySectionController.h */,
+				146BBFB1160DFD5E004CCE02 /* GCEmptySectionController.m */,
+				146BBFB2160DFD5E004CCE02 /* GCSimpleSectionController.h */,
+			);
+			name = Retractable;
+			sourceTree = "<group>";
+		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +221,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				141F6697160E3B54002BBCCC /* routs.plist */,
+				141F6699160E3BBD002BBCCC /* fells_loop.gpx */,
 				72237E371429B53100257B9A /* Third Party */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -202,6 +284,7 @@
 		72237E371429B53100257B9A /* Third Party */ = {
 			isa = PBXGroup;
 			children = (
+				146BBF90160DE410004CCE02 /* GCRetractableSectionController */,
 				72D7843214220EAC009B96E5 /* JSON */,
 				72D7843414220ECC009B96E5 /* Google Map API */,
 			);
@@ -274,6 +357,7 @@
 		72D784C2142210B3009B96E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */,
 				7292F9851434356400EE2EAD /* MapView */,
 			);
 			name = View;
@@ -282,6 +366,7 @@
 		72D784C3142210BC009B96E5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				146BBFAC160DFD09004CCE02 /* Retractable */,
 				72D788A6142310A3009B96E5 /* Main Controller */,
 			);
 			name = Controller;
@@ -326,6 +411,8 @@
 				72D784DC14221280009B96E5 /* MapViewController.m */,
 				727C7ABA143323EE00A5E466 /* CheckPointViewController.h */,
 				727C7ABB143323EE00A5E466 /* CheckPointViewController.m */,
+				146BBF8A160DE148004CCE02 /* ResultViewController.h */,
+				146BBF8B160DE148004CCE02 /* ResultViewController.m */,
 			);
 			name = "Main Controller";
 			sourceTree = "<group>";
@@ -385,6 +472,17 @@
 				72D7862E142222AA009B96E5 /* api.html in Resources */,
 				72D787BF14223C66009B96E5 /* iCon.png in Resources */,
 				727C7ABE143323EE00A5E466 /* SBCheckPoints.xib in Resources */,
+				146BBF9D160DE410004CCE02 /* DownAccessory.png in Resources */,
+				146BBF9E160DE410004CCE02 /* DownAccessory@2x.png in Resources */,
+				146BBF9F160DE410004CCE02 /* DownAccessoryWhite.png in Resources */,
+				146BBFA0160DE410004CCE02 /* DownAccessoryWhite@2x.png in Resources */,
+				146BBFA1160DE410004CCE02 /* UpAccessory.png in Resources */,
+				146BBFA2160DE410004CCE02 /* UpAccessory@2x.png in Resources */,
+				146BBFA3160DE410004CCE02 /* UpAccessoryWhite.png in Resources */,
+				146BBFA4160DE410004CCE02 /* UpAccessoryWhite@2x.png in Resources */,
+				146BBFAA160DFBB8004CCE02 /* ResultViewController.xib in Resources */,
+				141F6698160E3B54002BBCCC /* routs.plist in Resources */,
+				141F669A160E3BBD002BBCCC /* fells_loop.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -417,6 +515,12 @@
 				72AA5C311431A90B00301788 /* UICGRoutes.m in Sources */,
 				727C7ABD143323EE00A5E466 /* CheckPointViewController.m in Sources */,
 				727C7C3D14334E2D00A5E466 /* JSONKit.m in Sources */,
+				146BBF8D160DE149004CCE02 /* ResultViewController.m in Sources */,
+				146BBF9C160DE410004CCE02 /* GCRetractableSectionController.m in Sources */,
+				146BBFB3160DFD5E004CCE02 /* GCArraySectionController.m in Sources */,
+				146BBFB4160DFD5E004CCE02 /* GCEmptySectionController.m in Sources */,
+				146BBFB7160DFD68004CCE02 /* GCCustomSectionController.m in Sources */,
+				146BBFB8160DFD68004CCE02 /* GCSimpleSectionController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -73,7 +73,7 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.title = @"Google Maps";
+	self.title = @"Maps";
 	self.map = [[MapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	[self.view addSubview:mMap];
 	

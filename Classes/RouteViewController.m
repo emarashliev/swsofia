@@ -8,6 +8,7 @@
 
 #import "RouteViewController.h"
 #import "MapViewController.h"
+#import "ResultViewController.h"
 
 #define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
 
@@ -79,20 +80,22 @@
 	[mSourceCity resignFirstResponder];
 	[mDestinationCity resignFirstResponder];
 	
-	MapViewController *_Controller	= [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+//	MapViewController *_Controller	= [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
+    ResultViewController *resultControler = [[ResultViewController alloc] initWithNibName:@"ResultViewController" bundle:nil];
+    
 	
-	_Controller.startPoint		= mSourceCity.text;
-	self.DestinationCityArray = [[NSMutableArray alloc]init];
-	if (mDestinationCity.text != NULL ) {
-		[DestinationCityArray addObject:mDestinationCity.text];
-		
-	}
-	
-	_Controller.destination = DestinationCityArray;
-    _Controller.travelMode	= UICGTravelModeDriving;
+//	_Controller.startPoint		= mSourceCity.text;
+//	self.DestinationCityArray = [[NSMutableArray alloc]init];
+//	if (mDestinationCity.text != NULL ) {
+//		[DestinationCityArray addObject:mDestinationCity.text];
+//		
+//	}
+//	
+//	_Controller.destination = DestinationCityArray;
+//    _Controller.travelMode	= UICGTravelModeDriving;
 
-	[self.navigationController pushViewController:_Controller animated:YES];
-	[_Controller release];
+	[self.navigationController pushViewController:resultControler animated:YES];
+	[resultControler release];
 }
 -(void)viewWillAppear:(BOOL)animated
 {
