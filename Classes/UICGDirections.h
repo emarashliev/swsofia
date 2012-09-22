@@ -57,7 +57,7 @@
 - (id)init;
 - (void)makeAvailable;
 - (void)loadWithQuery:(NSString *)query options:(UICGDirectionsOptions *)options;
-- (void)loadWithStartPoint:(NSString *)startPoint endPoint:(NSMutableArray *)endPoints options:(UICGDirectionsOptions *)options; 
+- (void)loadWithStartPoint:(NSString *)startPoint endPoint:(NSMutableArray *)endPoints options:(UICGDirectionsOptions *)options;
 - (void)loadFromWaypoints:(NSArray *)waypoints options:(UICGDirectionsOptions *)options;
 - (NSInteger)numberOfRoutes;
 - (UICGRoute *)routeAtIndex:(NSInteger)index;

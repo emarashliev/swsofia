@@ -118,10 +118,13 @@ static UICGDirections *sharedDirections;
 		[self performSelector:@selector(loadDirections:)  withObject:msg afterDelay:idx+1];
 	}
 }
+
 -(void)loadDirections:(NSString *)message
 {
 	[googleMapsAPI stringByEvaluatingJavaScriptFromString:message];
 }
+
+
 - (void)loadFromWaypoints:(NSArray *)waypoints options:(UICGDirectionsOptions *)options {
 	[googleMapsAPI stringByEvaluatingJavaScriptFromString:
 	 [NSString stringWithFormat:@"loadFromWaypoints(%@, %@)", [waypoints JSONRepresentation], [options JSONRepresentation]]];

@@ -25,6 +25,8 @@
 	MapAnnotation*      mBetweenAnnotation;	// An Instance of SBRouteAnnotation which will give the annotations for checkpoints in the route. 
 	UIBarButtonItem*    mLoadBtn;			// button for loading and removing annotations for checkpoints in the route. 
 	NSMutableArray*		mAnnotationArray;	// An array of  annotations for checkpoints in the route.
+    
+    NSMutableArray*		myRoutSummary;
 
 }
 @property (nonatomic,retain) MapView* map;

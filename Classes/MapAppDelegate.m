@@ -23,8 +23,15 @@
     // Override point for customization after application launch.
 
     // Add the view controller's view to the window and display.
-	nav = [[UINavigationController alloc]initWithRootViewController:viewController];
-    [self.window addSubview:nav.view];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+   	viewController = [[RouteViewController alloc]initWithNibName:@"RouteViewController" bundle:nil];
+    
+	navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    navigationController.navigationBarHidden = YES;
+    
+    [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -34,7 +41,7 @@
 #pragma mark Memory management
 
 - (void)dealloc {
-	[nav release];
+	[navigationController release];
     [viewController release];
     [window release];
     [super dealloc];

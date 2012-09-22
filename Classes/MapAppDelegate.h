@@ -13,7 +13,7 @@
 @interface MapAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     RouteViewController *viewController;
-	UINavigationController *nav;
+	UINavigationController *navigationController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

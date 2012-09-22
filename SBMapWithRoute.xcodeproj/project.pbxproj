@@ -13,8 +13,16 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* RouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* RouteViewController.xib */; };
-		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* RouteViewController.m */; };
+		5E498075160E112400B26FEE /* StationsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5E498074160E112400B26FEE /* StationsList.plist */; };
+		5E9A62C9160E533200ACFAC4 /* go-on-release@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62C4160E533200ACFAC4 /* go-on-release@2x.png */; };
+		5E9A62CA160E533200ACFAC4 /* go@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62C5160E533200ACFAC4 /* go@2x.png */; };
+		5E9A62CB160E533200ACFAC4 /* main-page@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62C6160E533200ACFAC4 /* main-page@2x.png */; };
+		5E9A62CC160E533200ACFAC4 /* pin-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62C7160E533200ACFAC4 /* pin-button@2x.png */; };
+		5E9A62CD160E533200ACFAC4 /* Defaut@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62C8160E533200ACFAC4 /* Defaut@2x.png */; };
+		5E9A62D0160E53BF00ACFAC4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62CF160E53BF00ACFAC4 /* Default@2x.png */; };
+		5E9A62DA160E60E100ACFAC4 /* logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62D9160E60E100ACFAC4 /* logo@2x.png */; };
+		5E9A62E0160E6DCC00ACFAC4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E9A62DF160E6DCC00ACFAC4 /* Default-568h@2x.png */; };
 		72237DF71429B23200257B9A /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 72237DF61429B23200257B9A /* MapAnnotation.m */; };
 		727C7ABD143323EE00A5E466 /* CheckPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C7ABB143323EE00A5E466 /* CheckPointViewController.m */; };
 		727C7ABE143323EE00A5E466 /* SBCheckPoints.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */; };
@@ -50,11 +58,19 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2899E5210DE3E06400AC0155 /* RouteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RouteViewController.xib; sourceTree = "<group>"; };
-		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* RouteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RouteViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SBMapWithRoute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMapWithRoute_Prefix.pch; sourceTree = "<group>"; };
+		5E498074160E112400B26FEE /* StationsList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = StationsList.plist; sourceTree = "<group>"; };
+		5E9A62C4160E533200ACFAC4 /* go-on-release@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go-on-release@2x.png"; sourceTree = "<group>"; };
+		5E9A62C5160E533200ACFAC4 /* go@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "go@2x.png"; sourceTree = "<group>"; };
+		5E9A62C6160E533200ACFAC4 /* main-page@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main-page@2x.png"; sourceTree = "<group>"; };
+		5E9A62C7160E533200ACFAC4 /* pin-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pin-button@2x.png"; sourceTree = "<group>"; };
+		5E9A62C8160E533200ACFAC4 /* Defaut@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Defaut@2x.png"; path = "Resources/Defaut@2x.png"; sourceTree = "<group>"; };
+		5E9A62CF160E53BF00ACFAC4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5E9A62D9160E60E100ACFAC4 /* logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo@2x.png"; sourceTree = "<group>"; };
+		5E9A62DF160E6DCC00ACFAC4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		72237DF51429B23200257B9A /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		72237DF61429B23200257B9A /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		727C7ABA143323EE00A5E466 /* CheckPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPointViewController.h; sourceTree = "<group>"; };
@@ -141,6 +157,8 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				5E9A62DF160E6DCC00ACFAC4 /* Default-568h@2x.png */,
+				5E9A62CF160E53BF00ACFAC4 /* Default@2x.png */,
 				72237E371429B53100257B9A /* Third Party */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -163,6 +181,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5E9A62C3160E533200ACFAC4 /* images */,
+				5E9A62C8160E533200ACFAC4 /* Defaut@2x.png */,
+				5E498074160E112400B26FEE /* StationsList.plist */,
 				72D787A9142239E9009B96E5 /* Others */,
 				72D787A8142239D4009B96E5 /* Xib */,
 			);
@@ -179,6 +200,19 @@
 				72D784A41422108F009B96E5 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5E9A62C3160E533200ACFAC4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				5E9A62D9160E60E100ACFAC4 /* logo@2x.png */,
+				5E9A62C4160E533200ACFAC4 /* go-on-release@2x.png */,
+				5E9A62C5160E533200ACFAC4 /* go@2x.png */,
+				5E9A62C6160E533200ACFAC4 /* main-page@2x.png */,
+				5E9A62C7160E533200ACFAC4 /* pin-button@2x.png */,
+			);
+			name = images;
+			path = Resources/images;
 			sourceTree = "<group>";
 		};
 		72237DF31429B1EF00257B9A /* City */ = {
@@ -299,7 +333,6 @@
 		72D787A8142239D4009B96E5 /* Xib */ = {
 			isa = PBXGroup;
 			children = (
-				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				2899E5210DE3E06400AC0155 /* RouteViewController.xib */,
 				72D784DD14221280009B96E5 /* MapViewController.xib */,
 				727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */,
@@ -379,12 +412,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				2899E5220DE3E06400AC0155 /* RouteViewController.xib in Resources */,
 				72D784DF14221280009B96E5 /* MapViewController.xib in Resources */,
 				72D7862E142222AA009B96E5 /* api.html in Resources */,
 				72D787BF14223C66009B96E5 /* iCon.png in Resources */,
 				727C7ABE143323EE00A5E466 /* SBCheckPoints.xib in Resources */,
+				5E498075160E112400B26FEE /* StationsList.plist in Resources */,
+				5E9A62C9160E533200ACFAC4 /* go-on-release@2x.png in Resources */,
+				5E9A62CA160E533200ACFAC4 /* go@2x.png in Resources */,
+				5E9A62CB160E533200ACFAC4 /* main-page@2x.png in Resources */,
+				5E9A62CC160E533200ACFAC4 /* pin-button@2x.png in Resources */,
+				5E9A62CD160E533200ACFAC4 /* Defaut@2x.png in Resources */,
+				5E9A62D0160E53BF00ACFAC4 /* Default@2x.png in Resources */,
+				5E9A62DA160E60E100ACFAC4 /* logo@2x.png in Resources */,
+				5E9A62E0160E6DCC00ACFAC4 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

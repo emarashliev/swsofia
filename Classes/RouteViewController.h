@@ -27,6 +27,7 @@
 @property (nonatomic, retain) IBOutlet UIButton     *loadDirection;
 @property (nonatomic, retain) IBOutlet UIButton     *btnGetLocationCurrentFrom;
 @property (nonatomic, retain) IBOutlet UIButton     *btnGetLocationCurrentTo;
+@property (nonatomic, retain) IBOutlet UIImageView  *imgLogo;
 
 @property (nonatomic, retain) NSMutableArray        *DestinationCityArray;
 

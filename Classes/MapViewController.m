@@ -73,6 +73,11 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.navigationBarHidden = NO;
+    
+    myRoutSummary = [[NSMutableArray alloc] init];
+    
 	self.title = @"Google Maps";
 	self.map = [[MapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	[self.view addSubview:mMap];
@@ -81,44 +86,88 @@
 	self.annotationArray = [[NSMutableArray alloc]init];
 	self.routes			 = [[UICGRoutes alloc]init];
     
-	
 	if (mDirections.isInitialized) {
 		[self updateRoute];
+        //[self drawRoute];
 	}
-}
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
-
-- (void)didReceiveMemoryWarning {
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-    
-    // Release any cached data, images, etc that aren't in use.
-}
-
-- (void)viewDidUnload {
-    [super viewDidUnload];
-	
-	[self releaseAllViews];
-}
-- (void)viewDidAppear:(BOOL)animated
-{
-	[super viewDidAppear:YES];
-
-}
-- (void)viewWillDisappear:(BOOL)animated; 
-{
-	[super viewWillDisappear:YES];
-
 }
 
 #pragma mark -
 #pragma mark Instance Methods
+
+- (NSDictionary*)loadStationsFromPlist {
+    
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSString *finalPath = [path stringByAppendingPathComponent:@"StationsList.plist"];
+    NSDictionary *plistData = [[NSDictionary dictionaryWithContentsOfFile:finalPath] retain];
+    
+	return [plistData autorelease];
+}
+
+- (MKMapPoint*)mallocPointsArrFromDescriptionArr:(NSArray*)descriptionArr {
+    
+    
+    MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * [descriptionArr count]);
+    
+    for(int idx = 0; idx < [descriptionArr count]; idx++)
+	{
+        NSDictionary *pointDict = [descriptionArr objectAtIndex:idx];
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([(NSNumber*)[pointDict objectForKey:@"latitude"] floatValue], [(NSNumber*)[pointDict objectForKey:@"longitude"] floatValue]);
+        
+		//CLLocation *location = (CLLocation *)[descriptionArr objectAtIndex:idx];
+		
+		//CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+		
+		// break the string down even further to latitude and longitude fields.
+		MKMapPoint point = MKMapPointForCoordinate(coordinate);
+        
+        pointArr[idx] = point;
+        
+        NSLog(@"pointDict = %@", pointDict);
+    }
+    
+    return pointArr;
+}
+
+/*
+
+-(void)loadRoutes:(NSArray *)routePoints
+{
+    
+	MKMapPoint northEastPoint;
+	MKMapPoint southWestPoint;
+    
+	// create a c array of points.
+	//MKMapPoint* pointArr = malloc(sizeof(CLLocationCoordinate2D) * [routePoints count]);
+    
+    NSDictionary *allStations = [self loadStationsFromPlist];
+    NSArray *tmpStations = [allStations objectForKey:@"Bus 76"];
+    MKMapPoint* pointArr = [self mallocPointsArrFromDescriptionArr:tmpStations];
+    
+    
+
+*/
+
+
+- (void)drawRoute {
+	if (mDirections.isInitialized) {
+		[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        
+        UICGDirectionsOptions *options = [[[UICGDirectionsOptions alloc] init] autorelease];
+        options.travelMode = UICGTravelModeDriving;
+        City *mFirstCity = [[[City alloc]init] autorelease];
+        
+        mFirstCity.mCityName = mStartPoint;
+        
+        NSMutableArray *waypoints = [NSMutableArray array];
+        [waypoints addObject:mStartPoint];
+        [waypoints addObjectsFromArray:destination];
+        //[waypoints addObject:@"Hladilnika"];
+        
+        [mDirections loadFromWaypoints:waypoints options:options];
+	}
+}
+
 
 - (void)updateRoute
 {	
@@ -127,6 +176,7 @@
 	options.travelMode = UICGTravelModeDriving;
 	City *mFirstCity = [[[City alloc]init] autorelease];
 	mFirstCity.mCityName = mStartPoint;
+    
 	[mDirections loadWithStartPoint:mFirstCity.mCityName endPoint:destination options:options];
 }
 
@@ -160,15 +210,19 @@
 	[mAnnotations release];
 }
 
+
+
 -(void)showCheckpoints
 {
-	CheckPointViewController *_Controller	= [[CheckPointViewController alloc]initWithNibName:@"CheckPointViewController" bundle:nil];
+	CheckPointViewController *_Controller	= [[CheckPointViewController alloc]initWithNibName:@"SBCheckPoint" bundle:nil];
 	[self.navigationController pushViewController:_Controller animated:YES];
 	NSMutableArray *arr = [[mDirections checkPoint] mPlaceTitle];
 	_Controller.mCheckPoints = arr ;
 	
 	[_Controller release];
 }
+
+
 -(void)removeRouteAnnotations
 {
 	NSMutableArray *mTempAnnotation = [mAnnotations retain];
@@ -186,6 +240,7 @@
 
 - (void)directionsDidFinishInitialize:(UICGDirections *)directions {
 	[self updateRoute];
+    //[self drawRoute];
 }
 
 - (void)directions:(UICGDirections *)directions didFailInitializeWithError:(NSError *)error {
@@ -262,6 +317,9 @@
 - (void)dealloc {
 	//remove as Observer from NotificationCenter, if this class has registered for any notifications
 	//release all you member variables and appropriate caches
+    
+    [myRoutSummary release];
+    
 	[routes release];
 	[mAnnotationArray release];
     [mLoadBtn release];

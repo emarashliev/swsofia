@@ -68,8 +68,25 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSNotificationCenter* nc = [NSNotificationCenter defaultCenter];
+	
+    [nc addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
+    [nc addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    tapGesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapGesture];
+    [tapGesture release];
+
+    
 	self.title = @"Home";
 	
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 #pragma mark ButtonAction
@@ -85,7 +102,6 @@
 	self.DestinationCityArray = [[NSMutableArray alloc]init];
 	if (mDestinationCity.text != NULL ) {
 		[DestinationCityArray addObject:mDestinationCity.text];
-		
 	}
 	
 	_Controller.destination = DestinationCityArray;
@@ -94,13 +110,7 @@
 	[self.navigationController pushViewController:_Controller animated:YES];
 	[_Controller release];
 }
--(void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:YES];
-	//self.destinationCity.text = nil;
-//	self.destinationCity2.text = nil;
-//	self.sourceCity.text = nil;
-}
+
 
 - (void)viewDidUnload {
     [super viewDidUnload];
@@ -167,9 +177,52 @@
 	return YES;
 }
 
+-(IBAction)callPhone:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:029999999"]];
+}
+
 - (void)dealloc {
 	[self releaseAllViews];
     [super dealloc];
 }
+
+
+- (void)hideKeyboard {
+    [mSourceCity resignFirstResponder];
+    [mDestinationCity resignFirstResponder];
+}
+
+
+- (void)keyboardWillShow:(NSNotification *)notification {
+
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+        _imgLogo.frame = CGRectMake(30, 105, 62, 70);
+    }];
+    
+}
+
+- (void)keyboardWillHide:(NSNotification *) notification {
+	
+    NSDictionary *userInfo = [notification userInfo];
+    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSTimeInterval animationDuration;
+    [animationDurationValue getValue:&animationDuration];
+    
+    
+    [UIView animateWithDuration:animationDuration animations:^{
+        self.view.center = CGPointMake(self.view.center.x, self.view.bounds.size.height/2);
+        _imgLogo.frame = CGRectMake(58, 86, 62, 70);
+    }];
+     
+    
+}
+
+
 
 @end
