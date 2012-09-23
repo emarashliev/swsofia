@@ -31,6 +31,7 @@
 	navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
     navigationController.navigationBarHidden = YES;
     navigationController.navigationBar.barStyle = UIBarStyleBlack;
+    navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     
     [self.window setRootViewController:navigationController];
     [self.window makeKeyAndVisible];

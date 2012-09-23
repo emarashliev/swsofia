@@ -19,6 +19,8 @@
     CLLocationCoordinate2D coordinatesFrom;
     CLLocationCoordinate2D coordinatesTo;
     
+    
+    
     CLLocationManager *lm;
     CLGeocoder *geocoder;
 }
@@ -28,8 +30,7 @@
 @property (nonatomic, retain) IBOutlet UIButton     *btnGetLocationCurrentFrom;
 @property (nonatomic, retain) IBOutlet UIButton     *btnGetLocationCurrentTo;
 @property (nonatomic, retain) IBOutlet UIImageView  *imgLogo;
-
-@property (nonatomic, retain) NSMutableArray        *DestinationCityArray;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 #pragma mark ButtonAction
 - (IBAction)getCurrentLocation:(UIButton*)sender;

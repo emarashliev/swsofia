@@ -43,7 +43,6 @@
 @synthesize sourceCity		= txtFieldFrom;
 @synthesize destinationCity1 = txtFieldTo;
 @synthesize loadDirection	= mLoadDirection;
-@synthesize DestinationCityArray;
 
 //Invoked when the class is instantiated in XIB
 -(id)initWithCoder:(NSCoder*)aDecoder
@@ -90,6 +89,11 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
+    [_activityIndicator startAnimating];
+}
+
+- (void)viewDidAppear:(BOOL)animated   {
+    [self getCurrentLocation:nil];
 }
 
 #pragma mark ButtonAction
@@ -118,7 +122,7 @@
 }
 
 - (void)getCurrentLocation:(UIButton*)sender {
-    NSLog(@"BTN PRESSED");
+    //NSLog(@"BTN PRESSED");
     
     //Use Current location by GPS
     geocoder = [[CLGeocoder alloc] init];
@@ -126,30 +130,37 @@
     lm.delegate = (id)self;
     [lm startUpdatingLocation];
     
-    NSLog(@"geocoder = %@", geocoder);
-    NSLog(@"latitude = %f ,longitude = %f", lm.location.coordinate.latitude, lm.location.coordinate.longitude);
+    //NSLog(@"geocoder = %@", geocoder);
+    //NSLog(@"latitude = %f ,longitude = %f", lm.location.coordinate.latitude, lm.location.coordinate.longitude);
     
     //Block address
     [geocoder reverseGeocodeLocation: lm.location completionHandler:
      ^(NSArray *placemarks, NSError *error) {
          
+         if (error) [_activityIndicator stopAnimating];
+         
          //Get address
          CLPlacemark *placemark = [placemarks objectAtIndex:0];
          
-         NSLog(@"Placemark array: %@",placemark.addressDictionary );
+         //NSLog(@"Placemark array: %@",placemark.addressDictionary );
          
          //String to address
          NSString *locatedaddress = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
          
          //Print the location in the console
-         NSLog(@"Currently address is: %@",locatedaddress);
+         //NSLog(@"Currently address is: %@",locatedaddress);
          
          NSString *streetName = [placemark.addressDictionary objectForKey:@"Street"];
          
-         if (sender == _btnGetLocationCurrentFrom) txtFieldFrom.text = streetName;
-         else if (sender == _btnGetLocationCurrentTo) txtFieldTo.text = streetName;
+         if (sender == _btnGetLocationCurrentFrom || sender == nil)
+             txtFieldFrom.text = streetName;
+         else if (sender == _btnGetLocationCurrentTo)
+             txtFieldTo.text = streetName;
          
+         [_activityIndicator stopAnimating];
      }];
+    
+    
 }
 
 
