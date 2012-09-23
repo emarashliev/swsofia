@@ -11,8 +11,8 @@
 
 @interface RouteViewController : UIViewController <UITextFieldDelegate>{
 
-	UITextField			*mSourceCity;		//TextField for the Source city
-	UITextField			*mDestinationCity;	//TextField for the Destination city1
+	UITextField			*txtFieldFrom;		//TextField for the Source city
+	UITextField			*txtFieldTo;	//TextField for the Destination city1
 	UIButton			*mLoadDirection;	//Button for moving in next controller ie. GoogleMapController
 	NSMutableArray      *DestinationCityArray;
     

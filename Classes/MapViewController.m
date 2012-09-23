@@ -43,7 +43,7 @@
 @synthesize map				= mMap;
 @synthesize startPoint		= mStartPoint;
 @synthesize endPoint		= mEndPoint;
-@synthesize loadBtn		= mLoadBtn;
+@synthesize loadBtn         = mLoadBtn;
 @synthesize annotationArray = mAnnotationArray;
 @synthesize destination;
 @synthesize routes;
@@ -58,6 +58,7 @@
 	if( self)
 	{
 		[self customInitialization];
+        self.view.backgroundColor = [UIColor blackColor];
 	}
 	return self;
 }
@@ -66,6 +67,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
 		[self customInitialization];
+        self.view.backgroundColor = [UIColor blackColor];
 	}
 	return self;
 }
@@ -73,12 +75,8 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationController.navigationBarHidden = NO;
-    
-    myRoutSummary = [[NSMutableArray alloc] init];
-    
-	self.title = @"Google Maps";
+
+	self.title = @"Maps";
 	self.map = [[MapView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
 	[self.view addSubview:mMap];
 	
@@ -90,6 +88,10 @@
 		[self updateRoute];
         //[self drawRoute];
 	}
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    self.navigationController.navigationBarHidden = NO;
 }
 
 #pragma mark -
@@ -176,6 +178,8 @@
 	options.travelMode = UICGTravelModeDriving;
 	City *mFirstCity = [[[City alloc]init] autorelease];
 	mFirstCity.mCityName = mStartPoint;
+    
+    NSLog(@"destination = %@", destination);
     
 	[mDirections loadWithStartPoint:mFirstCity.mCityName endPoint:destination options:options];
 }
@@ -277,7 +281,10 @@
     
     [buttons addObject:mLoadBtn];
     
-    // Add Go button.
+    
+    
+    
+    // Add Go button. Bar Buttons
     UIBarButtonItem *mGoBtn = [[UIBarButtonItem alloc] initWithTitle:@"Go" 
                                           style:UIBarButtonItemStyleBordered 
                                          target:self 
@@ -286,12 +293,15 @@
     [mGoBtn release];
     
     // Add buttons to toolbar and toolbar to nav bar.
-    [tools setItems:buttons animated:NO];
+    //[tools setItems:buttons animated:NO];
     [buttons release];
     UIBarButtonItem *twoButtons = [[UIBarButtonItem alloc] initWithCustomView:tools];
     [tools release];
     self.navigationItem.rightBarButtonItem = twoButtons;
     [twoButtons release];
+    
+    
+    
 	
 	//Add annotations of different colors based on initial and final places.
 	MapAnnotation *startAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[[routePoints objectAtIndex:0] coordinate]

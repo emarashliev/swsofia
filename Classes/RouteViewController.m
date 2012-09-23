@@ -8,6 +8,7 @@
 
 #import "RouteViewController.h"
 #import "MapViewController.h"
+#import "ChooseOptionVC.h"
 
 #define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
 
@@ -38,8 +39,8 @@
 
 @implementation RouteViewController
 
-@synthesize sourceCity		= mSourceCity;
-@synthesize destinationCity1 = mDestinationCity;
+@synthesize sourceCity		= txtFieldFrom;
+@synthesize destinationCity1 = txtFieldTo;
 @synthesize loadDirection	= mLoadDirection;
 @synthesize DestinationCityArray;
 
@@ -60,6 +61,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
 		[self customInitialization];
+        self.view.backgroundColor = [UIColor blackColor];
 	}
 	return self;
 }
@@ -93,22 +95,16 @@
 
 -(IBAction)showGoogleMap:(id)sender
 {
-	[mSourceCity resignFirstResponder];
-	[mDestinationCity resignFirstResponder];
+	[txtFieldFrom resignFirstResponder];
+	[txtFieldTo resignFirstResponder];
 	
-	MapViewController *_Controller	= [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
-	
-	_Controller.startPoint		= mSourceCity.text;
-	self.DestinationCityArray = [[NSMutableArray alloc]init];
-	if (mDestinationCity.text != NULL ) {
-		[DestinationCityArray addObject:mDestinationCity.text];
-	}
-	
-	_Controller.destination = DestinationCityArray;
-    _Controller.travelMode	= UICGTravelModeDriving;
 
-	[self.navigationController pushViewController:_Controller animated:YES];
-	[_Controller release];
+    ChooseOptionVC *optionsVC = [[ChooseOptionVC alloc] initWithNibName:@"ChooseOptionVC" bundle:nil];
+    [optionsVC.locations setObject:txtFieldFrom.text forKey:@"start"];
+    [optionsVC.locations setObject:txtFieldTo.text   forKey:@"end"];
+
+	[self.navigationController pushViewController:optionsVC animated:YES];
+	[optionsVC release];
 }
 
 
@@ -148,8 +144,8 @@
          
          NSString *streetName = [placemark.addressDictionary objectForKey:@"Street"];
          
-         if (sender == _btnGetLocationCurrentFrom) mSourceCity.text = streetName;
-         else if (sender == _btnGetLocationCurrentTo) mDestinationCity.text = streetName;
+         if (sender == _btnGetLocationCurrentFrom) txtFieldFrom.text = streetName;
+         else if (sender == _btnGetLocationCurrentTo) txtFieldTo.text = streetName;
          
      }];
 }
@@ -167,12 +163,12 @@
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	if ( textField == mSourceCity) {
-		[mSourceCity resignFirstResponder];
-		[mDestinationCity becomeFirstResponder];
+	if ( textField == txtFieldFrom) {
+		[txtFieldFrom resignFirstResponder];
+		[txtFieldTo becomeFirstResponder];
 	}
-	if ( textField == mDestinationCity) {
-		[mDestinationCity resignFirstResponder];
+	if ( textField == txtFieldTo) {
+		[txtFieldTo resignFirstResponder];
 	}
 	return YES;
 }
@@ -188,8 +184,8 @@
 
 
 - (void)hideKeyboard {
-    [mSourceCity resignFirstResponder];
-    [mDestinationCity resignFirstResponder];
+    [txtFieldFrom resignFirstResponder];
+    [txtFieldTo resignFirstResponder];
 }
 
 
@@ -201,7 +197,7 @@
     [animationDurationValue getValue:&animationDuration];
 
     [UIView animateWithDuration:animationDuration animations:^{
-        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 100);
+        self.view.center = CGPointMake(self.view.center.x, self.view.center.y - 130);
         _imgLogo.frame = CGRectMake(30, 105, 62, 70);
     }];
     
