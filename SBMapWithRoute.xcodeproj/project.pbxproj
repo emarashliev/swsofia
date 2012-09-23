@@ -47,6 +47,9 @@
 		5E53A28A160E8E7900AFAAE9 /* detailRoute@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A27C160E8E7900AFAAE9 /* detailRoute@x2.png */; };
 		5E53A28B160E8E7900AFAAE9 /* mainBg@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A27D160E8E7900AFAAE9 /* mainBg@x2.png */; };
 		5E53A28C160E8E7900AFAAE9 /* Defaut@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A27E160E8E7900AFAAE9 /* Defaut@2x.png */; };
+		5E53A28F160EA4B300AFAAE9 /* StorageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53A28E160EA4B300AFAAE9 /* StorageObject.m */; };
+		5E53A29C160EAAE300AFAAE9 /* DetailcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53A29A160EAAE300AFAAE9 /* DetailcVC.m */; };
+		5E53A29D160EAAE300AFAAE9 /* DetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A29B160EAAE300AFAAE9 /* DetailsVC.xib */; };
 		72237DF71429B23200257B9A /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 72237DF61429B23200257B9A /* MapAnnotation.m */; };
 		727C7ABD143323EE00A5E466 /* CheckPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C7ABB143323EE00A5E466 /* CheckPointViewController.m */; };
 		727C7ABE143323EE00A5E466 /* SBCheckPoints.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */; };
@@ -126,6 +129,11 @@
 		5E53A27C160E8E7900AFAAE9 /* detailRoute@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "detailRoute@x2.png"; path = "Resources/detailRoute@x2.png"; sourceTree = "<group>"; };
 		5E53A27D160E8E7900AFAAE9 /* mainBg@x2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "mainBg@x2.png"; path = "Resources/mainBg@x2.png"; sourceTree = "<group>"; };
 		5E53A27E160E8E7900AFAAE9 /* Defaut@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Defaut@2x.png"; path = "Resources/Defaut@2x.png"; sourceTree = "<group>"; };
+		5E53A28E160EA4B300AFAAE9 /* StorageObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageObject.m; sourceTree = "<group>"; };
+		5E53A298160EA87A00AFAAE9 /* StorageObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StorageObject.h; sourceTree = "<group>"; };
+		5E53A299160EAAE300AFAAE9 /* DetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsVC.h; sourceTree = "<group>"; };
+		5E53A29A160EAAE300AFAAE9 /* DetailcVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailcVC.m; sourceTree = "<group>"; };
+		5E53A29B160EAAE300AFAAE9 /* DetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsVC.xib; path = Classes/DetailsVC.xib; sourceTree = "<group>"; };
 		72237DF51429B23200257B9A /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		72237DF61429B23200257B9A /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		727C7ABA143323EE00A5E466 /* CheckPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPointViewController.h; sourceTree = "<group>"; };
@@ -431,6 +439,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* MapAppDelegate.h */,
 				1D3623250D0F684500981E51 /* MapAppDelegate.m */,
+				5E53A298160EA87A00AFAAE9 /* StorageObject.h */,
+				5E53A28E160EA4B300AFAAE9 /* StorageObject.m */,
 			);
 			name = "App Delegate";
 			sourceTree = "<group>";
@@ -441,6 +451,7 @@
 				2899E5210DE3E06400AC0155 /* RouteViewController.xib */,
 				5E53A268160E747500AFAAE9 /* ChooseOptionVC.xib */,
 				72D784DD14221280009B96E5 /* MapViewController.xib */,
+				5E53A29B160EAAE300AFAAE9 /* DetailsVC.xib */,
 				727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */,
 			);
 			name = Xib;
@@ -465,6 +476,8 @@
 				5E53A267160E747500AFAAE9 /* ChooseOptionVC.m */,
 				72D784DB14221280009B96E5 /* MapViewController.h */,
 				72D784DC14221280009B96E5 /* MapViewController.m */,
+				5E53A299160EAAE300AFAAE9 /* DetailsVC.h */,
+				5E53A29A160EAAE300AFAAE9 /* DetailcVC.m */,
 				727C7ABA143323EE00A5E466 /* CheckPointViewController.h */,
 				727C7ABB143323EE00A5E466 /* CheckPointViewController.m */,
 				146BBF8A160DE148004CCE02 /* ResultViewController.h */,
@@ -553,6 +566,7 @@
 				5E53A28A160E8E7900AFAAE9 /* detailRoute@x2.png in Resources */,
 				5E53A28B160E8E7900AFAAE9 /* mainBg@x2.png in Resources */,
 				5E53A28C160E8E7900AFAAE9 /* Defaut@2x.png in Resources */,
+				5E53A29D160EAAE300AFAAE9 /* DetailsVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +606,8 @@
 				146BBFB7160DFD68004CCE02 /* GCCustomSectionController.m in Sources */,
 				146BBFB8160DFD68004CCE02 /* GCSimpleSectionController.m in Sources */,
 				5E53A269160E747500AFAAE9 /* ChooseOptionVC.m in Sources */,
+				5E53A28F160EA4B300AFAAE9 /* StorageObject.m in Sources */,
+				5E53A29C160EAAE300AFAAE9 /* DetailcVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

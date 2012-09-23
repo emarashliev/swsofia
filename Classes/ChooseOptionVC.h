@@ -12,7 +12,7 @@
     
 }
 
-@property (nonatomic, retain) NSMutableDictionary *locations;
+
 
 - (IBAction)btnPressed:(UIButton*)sender;
 

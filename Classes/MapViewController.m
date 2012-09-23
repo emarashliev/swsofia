@@ -13,6 +13,7 @@
 #import "UICGRoutes.h"
 #import "CheckPointViewController.h"
 //#import "SBRouteDetailView.h"
+#import "StorageObject.h"
 
 @interface MapViewController(Private)
 -(void)releaseAllViews;
@@ -161,6 +162,7 @@
         
         mFirstCity.mCityName = mStartPoint;
         
+        
         NSMutableArray *waypoints = [NSMutableArray array];
         [waypoints addObject:mStartPoint];
         [waypoints addObjectsFromArray:destination];
@@ -177,11 +179,11 @@
 	UICGDirectionsOptions *options = [[[UICGDirectionsOptions alloc] init] autorelease];
 	options.travelMode = UICGTravelModeDriving;
 	City *mFirstCity = [[[City alloc]init] autorelease];
-	mFirstCity.mCityName = mStartPoint;
+	mFirstCity.mCityName = [StorageObject sharedStorageObject].startPoint;
     
     NSLog(@"destination = %@", destination);
     
-	[mDirections loadWithStartPoint:mFirstCity.mCityName endPoint:destination options:options];
+	[mDirections loadWithStartPoint:mFirstCity.mCityName endPoint:[StorageObject sharedStorageObject].endPointsArr options:options];
 }
 
 -(void)loadRouteAnnotations

@@ -9,6 +9,7 @@
 #import "RouteViewController.h"
 #import "MapViewController.h"
 #import "ChooseOptionVC.h"
+#import "StorageObject.h"
 
 #define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
 
@@ -98,10 +99,11 @@
 	[txtFieldFrom resignFirstResponder];
 	[txtFieldTo resignFirstResponder];
 	
-
+    StorageObject *storageObject = [StorageObject sharedStorageObject];
+    storageObject.startPoint = txtFieldFrom.text;
+    storageObject.endPoint = txtFieldTo.text;
+    
     ChooseOptionVC *optionsVC = [[ChooseOptionVC alloc] initWithNibName:@"ChooseOptionVC" bundle:nil];
-    [optionsVC.locations setObject:txtFieldFrom.text forKey:@"start"];
-    [optionsVC.locations setObject:txtFieldTo.text   forKey:@"end"];
 
 	[self.navigationController pushViewController:optionsVC animated:YES];
 	[optionsVC release];

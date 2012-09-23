@@ -8,6 +8,7 @@
 
 #import "ChooseOptionVC.h"
 #import "MapViewController.h"
+#import "DetailsVC.h"
 
 @interface ChooseOptionVC ()
 
@@ -20,7 +21,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        _locations = [[NSMutableDictionary alloc] init];
         self.view.backgroundColor = [UIColor blackColor];
     }
     return self;
@@ -39,23 +39,15 @@
 
 - (IBAction)btnPressed:(UIButton*)sender {
     
+    DetailsVC *detailsVC	= [[DetailsVC alloc] initWithNibName:@"DetailsVC" bundle:nil];
+	[self.navigationController pushViewController:detailsVC animated:YES];
+	[detailsVC release];
+    
+    /*
     MapViewController *mapVC	= [[MapViewController alloc] initWithNibName:@"MapViewController" bundle:nil];
-
-    
-    //SET destinations for the search on the map
-    NSMutableArray *CityArray = [[NSMutableArray alloc] init];
-    
-    mapVC.startPoint = [_locations objectForKey:@"start"];
-   
-    NSString *endPoint = [_locations objectForKey:@"end"];
-    if (endPoint != NULL ) {
-        [CityArray addObject:endPoint];
-    }
-    
-    mapVC.destination = CityArray;
 	[self.navigationController pushViewController:mapVC animated:YES];
 	[mapVC release];
-
+     */
     
 }
 
