@@ -10,6 +10,7 @@
 #import "MapViewController.h"
 #import "ChooseOptionVC.h"
 #import "StorageObject.h"
+#import "Consts.h"
 
 #define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
 
@@ -75,14 +76,17 @@
 	
     [nc addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:self.view.window];
     [nc addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:self.view.window];
+    
+    [nc addObserver:self selector:@selector(updateCurrentLocation) name:kNotificationGeocoderChanged object:nil];
 
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     tapGesture.numberOfTapsRequired = 1;
     [self.view addGestureRecognizer:tapGesture];
     [tapGesture release];
 
+    //Start Location services
     
-	self.title = @"Home";
+    storageObject = [StorageObject sharedStorageObject];
 	
 }
 
@@ -93,7 +97,16 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated   {
-    [self getCurrentLocation:nil];
+    [self askForGeocoderUpdate];
+}
+
+- (IBAction)askForGeocoderUpdate {
+    [storageObject updateGoecoderFromCurrentLocation];
+}
+
+- (void)updateCurrentLocation {
+    txtFieldFrom.text = storageObject.streetName;
+    [_activityIndicator stopAnimating];
 }
 
 #pragma mark ButtonAction
@@ -103,7 +116,6 @@
 	[txtFieldFrom resignFirstResponder];
 	[txtFieldTo resignFirstResponder];
 	
-    StorageObject *storageObject = [StorageObject sharedStorageObject];
     storageObject.startPoint = txtFieldFrom.text;
     storageObject.endPoint = txtFieldTo.text;
     
@@ -120,49 +132,6 @@
     // e.g. self.myOutlet = nil;
 	[self releaseAllViews];
 }
-
-- (void)getCurrentLocation:(UIButton*)sender {
-    //NSLog(@"BTN PRESSED");
-    
-    //Use Current location by GPS
-    geocoder = [[CLGeocoder alloc] init];
-    lm = [[CLLocationManager alloc]init];
-    lm.delegate = (id)self;
-    [lm startUpdatingLocation];
-    
-    //NSLog(@"geocoder = %@", geocoder);
-    //NSLog(@"latitude = %f ,longitude = %f", lm.location.coordinate.latitude, lm.location.coordinate.longitude);
-    
-    //Block address
-    [geocoder reverseGeocodeLocation: lm.location completionHandler:
-     ^(NSArray *placemarks, NSError *error) {
-         
-         if (error) [_activityIndicator stopAnimating];
-         
-         //Get address
-         CLPlacemark *placemark = [placemarks objectAtIndex:0];
-         
-         //NSLog(@"Placemark array: %@",placemark.addressDictionary );
-         
-         //String to address
-         NSString *locatedaddress = [[placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
-         
-         //Print the location in the console
-         //NSLog(@"Currently address is: %@",locatedaddress);
-         
-         NSString *streetName = [placemark.addressDictionary objectForKey:@"Street"];
-         
-         if (sender == _btnGetLocationCurrentFrom || sender == nil)
-             txtFieldFrom.text = streetName;
-         else if (sender == _btnGetLocationCurrentTo)
-             txtFieldTo.text = streetName;
-         
-         [_activityIndicator stopAnimating];
-     }];
-    
-    
-}
-
 
 #pragma mark UITextFieldDelegate Methods
 

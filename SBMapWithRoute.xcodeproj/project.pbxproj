@@ -112,6 +112,7 @@
 		28D7ACF70DDB3853001CB0EB /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SBMapWithRoute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMapWithRoute_Prefix.pch; sourceTree = "<group>"; };
+		5E3FE2421613A75100B2FECE /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
 		5E53A266160E747500AFAAE9 /* ChooseOptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionVC.h; sourceTree = "<group>"; };
 		5E53A267160E747500AFAAE9 /* ChooseOptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionVC.m; sourceTree = "<group>"; };
 		5E53A268160E747500AFAAE9 /* ChooseOptionVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ChooseOptionVC.xib; path = Classes/ChooseOptionVC.xib; sourceTree = "<group>"; };
@@ -438,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* MapAppDelegate.h */,
+				5E3FE2421613A75100B2FECE /* Consts.h */,
 				1D3623250D0F684500981E51 /* MapAppDelegate.m */,
 				5E53A298160EA87A00AFAAE9 /* StorageObject.h */,
 				5E53A28E160EA4B300AFAAE9 /* StorageObject.m */,

@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 
+@class StorageObject;
+
 @interface RouteViewController : UIViewController <UITextFieldDelegate>{
 
 	UITextField			*txtFieldFrom;		//TextField for the Source city
@@ -19,10 +21,8 @@
     CLLocationCoordinate2D coordinatesFrom;
     CLLocationCoordinate2D coordinatesTo;
     
+    StorageObject           *storageObject;
     
-    
-    CLLocationManager *lm;
-    CLGeocoder *geocoder;
 }
 @property (nonatomic, retain) IBOutlet UITextField  *sourceCity;
 @property (nonatomic, retain) IBOutlet UITextField  *destinationCity1;
@@ -33,7 +33,8 @@
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 #pragma mark ButtonAction
-- (IBAction)getCurrentLocation:(UIButton*)sender;
+- (IBAction)updateCurrentLocation;
+- (IBAction)askForGeocoderUpdate;
 - (IBAction)showGoogleMap:(id)sender;		//Action for moving in next controller ie. GoogleMapController
 
 @end
