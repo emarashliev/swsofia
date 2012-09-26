@@ -39,7 +39,7 @@
     [self.view addSubview:_scrollView];
     [_scrollView addSubview:_imageContainer];
     
-    _scrollView.contentSize = CGSizeMake(_imageContainer.frame.size.width, _imageContainer.frame.size.height+40);
+    _scrollView.contentSize = CGSizeMake(_imageContainer.frame.size.width, _imageContainer.frame.size.height+60);
     
     
     UIImage *image = [UIImage imageNamed:@"ViewMap.png"];
@@ -82,29 +82,26 @@
     UIFont *font = [UIFont fontWithName:@"Helvetica" size:10];
     UIColor *color = [UIColor clearColor];
     
-    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(38, 245, 40, 20)];
+    UILabel *label1 = [[UILabel alloc] initWithFrame:CGRectMake(36, 245, 40, 20)];
     label1.text = [dateFormatter stringFromDate:[self getCurrentDatePlusMinutes:6]];
     label1.backgroundColor = color;
     label1.font = font;
     [_imageContainer addSubview:label1];
 
-    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(38, 677, 40, 20)];
+    UILabel *label2 = [[UILabel alloc] initWithFrame:CGRectMake(36, 409, 40, 20)];
     label2.text = [dateFormatter stringFromDate:[self getCurrentDatePlusMinutes:20]];
     label2.backgroundColor = color;
     label2.font = font;
     [_imageContainer addSubview:label2];
-    
 
-    UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(38, 835, 40, 20)];
+    UILabel *label3 = [[UILabel alloc] initWithFrame:CGRectMake(36, 568, 40, 20)];
     label3.text = [dateFormatter stringFromDate:[self getCurrentDatePlusMinutes:28]];
     label3.backgroundColor = color;
     label3.font = font;
     [_imageContainer addSubview:label3];
 
-    
-
-
 }
+
 
 - (NSDate *)getCurrentDatePlusMinutes:(NSInteger)minutes {
     NSDate *laterDate = [[NSDate alloc] initWithTimeIntervalSinceNow:minutes*60];
