@@ -33,7 +33,7 @@
 }
 
 - (NSString *)titleContentForRow:(NSUInteger)row {
-    return [self.content objectAtIndex:row];
+    return (self.content)[row];
 }
 
 - (void)didSelectContentCellAtRow:(NSUInteger)row {

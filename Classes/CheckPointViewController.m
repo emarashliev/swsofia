@@ -94,7 +94,7 @@
     }
     
     // Configure the cell...
-	cell.textLabel.text = [NSString stringWithFormat:@"%@",[mCheckPoints objectAtIndex:indexPath.row]];
+	cell.textLabel.text = [NSString stringWithFormat:@"%@",mCheckPoints[indexPath.row]];
 	cell.textLabel.numberOfLines = 3;
 	cell.textLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14.0f];
 	return cell;	

@@ -26,19 +26,19 @@
 	self = [super init];
 	if (self != nil) {
 		dictionaryRepresentation = [dictionary retain];	
-		NSDictionary *routeDic = [dictionaryRepresentation objectForKey:@"k"];
-		step = [routeDic objectForKey:@"Steps"];
+		NSDictionary *routeDic = dictionaryRepresentation[@"k"];
+		step = routeDic[@"Steps"];
 		self.wayPoints = [NSMutableArray arrayWithCapacity:[step count]];
 		NSMutableArray* wayPointsHTML = [NSMutableArray arrayWithCapacity:[step count]];
 		for (int i=0 ; i<[step count]; i++) {
-			NSArray *coordinateArray = [[[step objectAtIndex:i] objectForKey:@"Point"] objectForKey:@"coordinates"];
+			NSArray *coordinateArray = step[i][@"Point"][@"coordinates"];
 			
-			CLLocationDegrees latitude  = [[coordinateArray objectAtIndex:1] doubleValue];
-			CLLocationDegrees longitude = [[coordinateArray objectAtIndex:0] doubleValue];
+			CLLocationDegrees latitude  = [coordinateArray[1] doubleValue];
+			CLLocationDegrees longitude = [coordinateArray[0] doubleValue];
 			CLLocation *location = [[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] autorelease];
 			[self.wayPoints addObject:location];
 			
-			NSString *mDescriptionHTML = [[step objectAtIndex:i] objectForKey:@"descriptionHtml"];
+			NSString *mDescriptionHTML = step[i][@"descriptionHtml"];
 			[wayPointsHTML addObject:mDescriptionHTML];
 		}
 
@@ -50,7 +50,7 @@
 		for (int index=0 ; index<[step count]; index++)	
 		{
 			//NSString *mPlaceString = [[[NSString alloc]init]autorelease];
-			summaryHtml = [wayPointsHTML objectAtIndex:index];
+			summaryHtml = wayPointsHTML[index];
 			//mPlaceString = [wayPointsHTML objectAtIndex:index];
 			summaryHtml = [summaryHtml stringByReplacingOccurrencesOfString:@"\\r\\" withString:@""];
 			//mPlaceString = [mPlaceString stringByReplacingOccurrencesOfString:@"\n" withString:@""];

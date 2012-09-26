@@ -27,20 +27,20 @@
 		dictionaryRepresentation = [dictionary retain];
         
         if (!vertices || (NSNull *)vertices == [NSNull null]) {
-            vertices = [[dictionaryRepresentation objectForKey:@"k"] retain];
+            vertices = [dictionaryRepresentation[@"k"] retain];
         }
         if (!vertices || (NSNull *)vertices == [NSNull null]) {
-            vertices = [[dictionaryRepresentation objectForKey:@"g"] retain];
+            vertices = [dictionaryRepresentation[@"g"] retain];
         }
         if (!vertices || (NSNull *)vertices == [NSNull null]) {
-            vertices = [[dictionaryRepresentation objectForKey:@"j"] retain];
+            vertices = [dictionaryRepresentation[@"j"] retain];
         }
         
         vertexCount = [vertices count];
 		routePoints = [NSMutableArray arrayWithCapacity:vertexCount];
 		for (NSDictionary *vertex in vertices) {
-			CLLocationDegrees latitude  = [[vertex objectForKey:@"y"] doubleValue];
-			CLLocationDegrees longitude = [[vertex objectForKey:@"x"] doubleValue];
+			CLLocationDegrees latitude  = [vertex[@"y"] doubleValue];
+			CLLocationDegrees longitude = [vertex[@"x"] doubleValue];
 			CLLocation *location = [[[CLLocation alloc] initWithLatitude:latitude longitude:longitude] autorelease];
 			[routePoints addObject:location];
 		}
@@ -55,7 +55,7 @@
 }
 
 - (CLLocation *)vertexAtIndex:(NSInteger)index {
-	return [routePoints objectAtIndex:index];
+	return routePoints[index];
 }
 
 - (void)insertVertexAtIndex:(NSInteger)index inLocation:(CLLocation *)location {

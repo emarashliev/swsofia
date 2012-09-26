@@ -37,7 +37,7 @@
     
     GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
     
-    self.retractableControllers = [NSArray arrayWithObjects:simpleController, nil];
+    self.retractableControllers = @[simpleController];
     [simpleController release];
 ;
     // Do any additional setup after loading the view from its nib.
@@ -49,17 +49,17 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:section];
+    GCRetractableSectionController* sectionController = (self.retractableControllers)[section];
     return sectionController.numberOfRow;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
+    GCRetractableSectionController* sectionController = (self.retractableControllers)[indexPath.section];
     return [sectionController cellForRow:indexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    GCRetractableSectionController* sectionController = [self.retractableControllers objectAtIndex:indexPath.section];
+    GCRetractableSectionController* sectionController = (self.retractableControllers)[indexPath.section];
     return [sectionController didSelectCellAtRow:indexPath.row];
 }
 

@@ -31,20 +31,20 @@
 	if (self != nil) {
 		dictionaryRepresentation = [dictionary retain];
         NSArray *allKeys = [dictionaryRepresentation allKeys];
-        NSDictionary *k = [dictionaryRepresentation objectForKey:[allKeys objectAtIndex:[allKeys count] - 1]];
+        NSDictionary *k = dictionaryRepresentation[allKeys[[allKeys count] - 1]];
 				
-		endGeocode = [dictionaryRepresentation objectForKey:@"MJ"];
-		startGeocode = [dictionaryRepresentation objectForKey:@"dT"];
+		endGeocode = dictionaryRepresentation[@"MJ"];
+		startGeocode = dictionaryRepresentation[@"dT"];
 		
-		distance = [k objectForKey:@"Distance"];
-		duration = [k objectForKey:@"Duration"];
-		NSDictionary *endLocationDic = [k objectForKey:@"End"];
-		NSArray *coordinates = [endLocationDic objectForKey:@"coordinates"];
-		CLLocationDegrees longitude = [[coordinates objectAtIndex:0] doubleValue];
-		CLLocationDegrees latitude  = [[coordinates objectAtIndex:1] doubleValue];
+		distance = k[@"Distance"];
+		duration = k[@"Duration"];
+		NSDictionary *endLocationDic = k[@"End"];
+		NSArray *coordinates = endLocationDic[@"coordinates"];
+		CLLocationDegrees longitude = [coordinates[0] doubleValue];
+		CLLocationDegrees latitude  = [coordinates[1] doubleValue];
 		endLocation = [[CLLocation alloc] initWithLatitude:latitude longitude:longitude];
-		summaryHtml = [k objectForKey:@"summaryHtml"];
-		polylineEndIndex = [[k objectForKey:@"polylineEndIndex"] integerValue];
+		summaryHtml = k[@"summaryHtml"];
+		polylineEndIndex = [k[@"polylineEndIndex"] integerValue];
 	}
 	return self;
 }

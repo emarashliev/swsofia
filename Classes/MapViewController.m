@@ -114,8 +114,8 @@
     
     for(int idx = 0; idx < [descriptionArr count]; idx++)
 	{
-        NSDictionary *pointDict = [descriptionArr objectAtIndex:idx];
-        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([(NSNumber*)[pointDict objectForKey:@"latitude"] floatValue], [(NSNumber*)[pointDict objectForKey:@"longitude"] floatValue]);
+        NSDictionary *pointDict = descriptionArr[idx];
+        CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake([(NSNumber*)pointDict[@"latitude"] floatValue], [(NSNumber*)pointDict[@"longitude"] floatValue]);
         
 		//CLLocation *location = (CLLocation *)[descriptionArr objectAtIndex:idx];
 		
@@ -192,8 +192,8 @@
     NSLog(@"mRouteArray %@",mRouteArray);
 	self.mAnnotations = [[NSMutableArray alloc]init];
 	for (int idx = 0; idx < [mRouteArray count]; idx++) {
-		NSArray *_routeWayPoints1 = [[mRouteArray objectAtIndex:idx] wayPoints];
-		NSArray *mPlacetitles = [[mRouteArray objectAtIndex:idx] mPlaceTitle]; 
+		NSArray *_routeWayPoints1 = [mRouteArray[idx] wayPoints];
+		NSArray *mPlacetitles = [mRouteArray[idx] mPlaceTitle]; 
 		self.annotationArray = [NSMutableArray arrayWithCapacity:[_routeWayPoints1 count]-2];
                         
 		mLoadBtn.title = @"OFF";
@@ -203,13 +203,13 @@
 		for(int idx = 0; idx < [_routeWayPoints1 count]-1; idx++)
 		{
 			
-			mBetweenAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[[_routeWayPoints1 objectAtIndex:idx]coordinate]
-																		  title:[mPlacetitles objectAtIndex:idx]
+			mBetweenAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[_routeWayPoints1[idx]coordinate]
+																		  title:mPlacetitles[idx]
 																 annotationType:SBRouteAnnotationTypeWayPoint] autorelease];
 			[self.annotationArray addObject:mBetweenAnnotation];
 		}
 		[mAnnotations addObject:mAnnotationArray];
-		[self.map.mapView addAnnotations:[mAnnotations objectAtIndex:idx]];
+		[self.map.mapView addAnnotations:mAnnotations[idx]];
         NSLog(@"map %@",mMap);
 
 	}	
@@ -233,7 +233,7 @@
 {
 	NSMutableArray *mTempAnnotation = [mAnnotations retain];
 	for (int idx = 0; idx < [mTempAnnotation count]; idx++) {
-		[mMap.mapView removeAnnotations:[mTempAnnotation objectAtIndex:idx] ];
+		[mMap.mapView removeAnnotations:mTempAnnotation[idx] ];
 	}	
 	mLoadBtn.title = @"ON";
 	mLoadBtn.target = self;
@@ -306,7 +306,7 @@
     
 	
 	//Add annotations of different colors based on initial and final places.
-	MapAnnotation *startAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[[routePoints objectAtIndex:0] coordinate]
+	MapAnnotation *startAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[routePoints[0] coordinate]
 																					title:mStartPoint
 																		   annotationType:SBRouteAnnotationTypeStart] autorelease];
 	MapAnnotation *endAnnotation = [[[MapAnnotation alloc] initWithCoordinate:[[routePoints lastObject] coordinate]
@@ -314,7 +314,7 @@
 																		 annotationType:SBRouteAnnotationTypeEnd] autorelease];
 	
 	
-	[mMap.mapView addAnnotations:[NSArray arrayWithObjects:startAnnotation, endAnnotation,nil]];
+	[mMap.mapView addAnnotations:@[startAnnotation, endAnnotation]];
 }
 
 - (void)directions:(UICGDirections *)directions didFailWithMessage:(NSString *)message {

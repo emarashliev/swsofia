@@ -52,7 +52,7 @@
 	
 	for(int idx = 0; idx < [routePoints count]; idx++)
 	{
-		CLLocation *location = (CLLocation *)[routePoints objectAtIndex:idx];
+		CLLocation *location = (CLLocation *)routePoints[idx];
 		
 		CLLocationCoordinate2D coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
 		
@@ -86,7 +86,7 @@
 	
 	
 	for (int i = 0; i < [routePoints count]; i++) {
-		CLLocation *currentLocation = [routePoints  objectAtIndex:i];
+		CLLocation *currentLocation = routePoints[i];
 		if(currentLocation.coordinate.latitude > maxLat) {
 			maxLat = currentLocation.coordinate.latitude;
 		}
@@ -150,7 +150,7 @@
 {
 	NSArray *pinTitle=mMapView.annotations;
 	for (int idx = 0 ; idx < [pinTitle count]; idx ++) {
-		MapAnnotation *pinTitle1 = [pinTitle objectAtIndex:idx];
+		MapAnnotation *pinTitle1 = pinTitle[idx];
 		NSString *pinTitle11 = pinTitle1.title;
 		NSLog(@" pinTitle1 %@",pinTitle11);
 

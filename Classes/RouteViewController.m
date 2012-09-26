@@ -174,7 +174,7 @@
 - (void)keyboardWillShow:(NSNotification *)notification {
 
     NSDictionary *userInfo = [notification userInfo];
-    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSValue *animationDurationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
 
@@ -188,7 +188,7 @@
 - (void)keyboardWillHide:(NSNotification *) notification {
 	
     NSDictionary *userInfo = [notification userInfo];
-    NSValue *animationDurationValue = [userInfo objectForKey:UIKeyboardAnimationDurationUserInfoKey];
+    NSValue *animationDurationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey];
     NSTimeInterval animationDuration;
     [animationDurationValue getValue:&animationDuration];
     

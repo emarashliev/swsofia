@@ -125,12 +125,12 @@
             [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kNotificationGeocoderError object:self]];
         }
         //Get address
-        _placemark = [placemarks objectAtIndex:0];
+        _placemark = placemarks[0];
 
         //String to address
         _locatedaddress = [[_placemark.addressDictionary valueForKey:@"FormattedAddressLines"] componentsJoinedByString:@", "];
     
-        _streetName = [_placemark.addressDictionary objectForKey:@"Street"];
+        _streetName = (_placemark.addressDictionary)[@"Street"];
         
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kNotificationGeocoderChanged object:self]];
         

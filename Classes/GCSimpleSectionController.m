@@ -26,7 +26,7 @@
 }
 
 - (NSString *)titleContentForRow:(NSUInteger)row {
-    return [self.colors objectAtIndex:row];
+    return (self.colors)[row];
 }
 
 - (NSUInteger)contentNumberOfRow {

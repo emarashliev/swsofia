@@ -65,19 +65,19 @@ static UICGDirections *sharedDirections;
 
 - (void)goolgeMapsAPI:(UICGoogleMapsAPI *)goolgeMapsAPI didGetObject:(NSObject *)object {
 	NSDictionary *dictionary = (NSDictionary *)object;
-	NSArray *routeDics = [dictionary objectForKey:@"routes"];
+	NSArray *routeDics = dictionary[@"routes"];
 	//routes = [[NSMutableArray alloc] initWithCapacity:[routeDics count]];
 	//for (NSDictionary *routeDic in routeDics) {
 //		[(NSMutableArray *)routes addObject:[UICGRoute routeWithDictionaryRepresentation:routeDic]];
 //		NSLog(@"routes %d  routeDics %d",[routes count],[routeDics count]);
 //	}
-	self.geocodes = [dictionary objectForKey:@"geocodes"];
-	self.polyline = [UICGPolyline polylineWithDictionaryRepresentation:[dictionary objectForKey:@"polyline"]];
-	self.distance = [dictionary objectForKey:@"distance"];
-	self.duration = [dictionary objectForKey:@"duration"];
-	self.status =   [dictionary objectForKey:@"status"];
+	self.geocodes = dictionary[@"geocodes"];
+	self.polyline = [UICGPolyline polylineWithDictionaryRepresentation:dictionary[@"polyline"]];
+	self.distance = dictionary[@"distance"];
+	self.duration = dictionary[@"duration"];
+	self.status =   dictionary[@"status"];
 	
-	NSDictionary *mCheckPointDic = [routeDics objectAtIndex:0];
+	NSDictionary *mCheckPointDic = routeDics[0];
 	self.checkPoint = [UICGCheckPoint CheckPointWithDictionaryRepresentation:mCheckPointDic];
 	[self.routeArray  addObject:checkPoint];
 	NSLog(@" routeArray %d",[routeArray count]);
@@ -113,7 +113,7 @@ static UICGDirections *sharedDirections;
 - (void)loadWithStartPoint:(NSString *)startPoint endPoint:(NSMutableArray *)endPoints options:(UICGDirectionsOptions *)options {
 	for (int idx = 0; idx < [endPoints count];idx ++) 
 	{
-		NSString* msg = [NSString stringWithFormat:@"loadDirections('sofia %@', 'sofia %@', %@)", startPoint, [endPoints objectAtIndex:idx], [options JSONRepresentation]];
+		NSString* msg = [NSString stringWithFormat:@"loadDirections('sofia %@', 'sofia %@', %@)", startPoint, endPoints[idx], [options JSONRepresentation]];
 		mstr = [msg retain];
 		[self performSelector:@selector(loadDirections:)  withObject:msg afterDelay:idx+1];
 	}
@@ -135,7 +135,7 @@ static UICGDirections *sharedDirections;
 }
 
 - (UICGRoute *)routeAtIndex:(NSInteger)index {
-	return [routes objectAtIndex:index];
+	return routes[index];
 }
 
 - (NSInteger)numberOfGeocodes {
@@ -143,7 +143,7 @@ static UICGDirections *sharedDirections;
 }
 
 - (NSDictionary *)geocodeAtIndex:(NSInteger)index {
-	return [geocodes objectAtIndex:index];;
+	return geocodes[index];;
 }
 
 @end

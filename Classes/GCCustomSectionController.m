@@ -30,7 +30,7 @@
 }
 
 - (NSString *)titleContentForRow:(NSUInteger)row {
-    return [self.content objectAtIndex:row];
+    return (self.content)[row];
 }
 
 #pragma mark -
