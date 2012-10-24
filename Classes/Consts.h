@@ -10,3 +10,5 @@
 
 #define kNotificationGeocoderChanged    @"GeocoderChangedNotification"
 #define kNotificationGeocoderError      @"GeocoderChangedError"
+
+#define localStorageKey                 @"localStorage"

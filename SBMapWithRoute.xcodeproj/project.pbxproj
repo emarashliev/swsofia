@@ -31,6 +31,9 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* RouteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* RouteViewController.xib */; };
 		28D7ACF80DDB3853001CB0EB /* RouteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* RouteViewController.m */; };
+		4882179B162F278000811368 /* SofiaGoAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4882179A162F278000811368 /* SofiaGoAPI.m */; };
+		48C458B9163832CC008DBB3F /* SGStation.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C458B8163832CC008DBB3F /* SGStation.m */; };
+		48C458BD16383560008DBB3F /* SGLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 48C458BC16383560008DBB3F /* SGLine.m */; };
 		5E53A269160E747500AFAAE9 /* ChooseOptionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53A267160E747500AFAAE9 /* ChooseOptionVC.m */; };
 		5E53A26A160E747500AFAAE9 /* ChooseOptionVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A268160E747500AFAAE9 /* ChooseOptionVC.xib */; };
 		5E53A27F160E8E7900AFAAE9 /* back@x2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A271160E8E7900AFAAE9 /* back@x2.png */; };
@@ -112,6 +115,12 @@
 		28D7ACF70DDB3853001CB0EB /* RouteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RouteViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SBMapWithRoute_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBMapWithRoute_Prefix.pch; sourceTree = "<group>"; };
+		48821799162F278000811368 /* SofiaGoAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SofiaGoAPI.h; path = API/SofiaGoAPI.h; sourceTree = "<group>"; };
+		4882179A162F278000811368 /* SofiaGoAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SofiaGoAPI.m; path = API/SofiaGoAPI.m; sourceTree = "<group>"; };
+		48C458B7163832CC008DBB3F /* SGStation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGStation.h; path = API/SGStation.h; sourceTree = "<group>"; };
+		48C458B8163832CC008DBB3F /* SGStation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGStation.m; path = API/SGStation.m; sourceTree = "<group>"; };
+		48C458BB16383560008DBB3F /* SGLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGLine.h; path = API/SGLine.h; sourceTree = "<group>"; };
+		48C458BC16383560008DBB3F /* SGLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGLine.m; path = API/SGLine.m; sourceTree = "<group>"; };
 		5E3FE2421613A75100B2FECE /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
 		5E53A266160E747500AFAAE9 /* ChooseOptionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseOptionVC.h; sourceTree = "<group>"; };
 		5E53A267160E747500AFAAE9 /* ChooseOptionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseOptionVC.m; sourceTree = "<group>"; };
@@ -202,6 +211,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				48821797162F275600811368 /* API */,
 				72D787A714223992009B96E5 /* App Delegate */,
 				72D784C3142210BC009B96E5 /* Controller */,
 				72D784C2142210B3009B96E5 /* View */,
@@ -306,6 +316,19 @@
 				72D784A41422108F009B96E5 /* MapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48821797162F275600811368 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				48821799162F278000811368 /* SofiaGoAPI.h */,
+				4882179A162F278000811368 /* SofiaGoAPI.m */,
+				48C458B7163832CC008DBB3F /* SGStation.h */,
+				48C458B8163832CC008DBB3F /* SGStation.m */,
+				48C458BB16383560008DBB3F /* SGLine.h */,
+				48C458BC16383560008DBB3F /* SGLine.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		5E53A270160E8E7900AFAAE9 /* images */ = {
@@ -610,6 +633,9 @@
 				5E53A269160E747500AFAAE9 /* ChooseOptionVC.m in Sources */,
 				5E53A28F160EA4B300AFAAE9 /* StorageObject.m in Sources */,
 				5E53A29C160EAAE300AFAAE9 /* DetailcVC.m in Sources */,
+				4882179B162F278000811368 /* SofiaGoAPI.m in Sources */,
+				48C458B9163832CC008DBB3F /* SGStation.m in Sources */,
+				48C458BD16383560008DBB3F /* SGLine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

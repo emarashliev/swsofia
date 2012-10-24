@@ -11,6 +11,7 @@
 #import "ChooseOptionVC.h"
 #import "StorageObject.h"
 #import "Consts.h"
+#import "SofiaGoAPI.h"
 
 #define k_CoordinatesDefault CLLocationCoordinate2DMake(42.686182, 23.318406);
 
@@ -35,6 +36,10 @@
 	// do the initialization of class variables here..
     coordinatesFrom = k_CoordinatesDefault;
     coordinatesTo   = k_CoordinatesDefault;
+        
+    NSDictionary *dict = [SofiaGoAPI stationsAroundMe:coordinatesFrom];
+    
+    NSLog(@"dict: %@", dict);
 }
 
 @end
@@ -52,8 +57,7 @@
 	if( self)
 	{
 		[self customInitialization];
-        
-	}
+    }
 	return self;
 }
 
