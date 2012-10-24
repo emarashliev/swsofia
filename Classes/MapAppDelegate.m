@@ -8,6 +8,7 @@
 
 #import "MapAppDelegate.h"
 #import "RouteViewController.h"
+#import "StorageObject.h"
 
 @implementation MapAppDelegate
 
@@ -24,16 +25,19 @@
 
     // Add the view controller's view to the window and display.
     
-    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.viewController = [[RouteViewController alloc] initWithNibName:@"RouteViewController" bundle:nil];
     
-   	viewController = [[RouteViewController alloc]initWithNibName:@"RouteViewController" bundle:nil];
-    
-	navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
+    navigationController = [[UINavigationController alloc]initWithRootViewController:viewController];
     navigationController.navigationBarHidden = YES;
     navigationController.navigationBar.barStyle = UIBarStyleBlack;
     navigationController.navigationBar.backgroundColor = [UIColor blackColor];
     
-    [self.window setRootViewController:navigationController];
+    //Start Location services as fast as possible to get most acurate result in the root VC
+    [StorageObject sharedStorageObject];
+    
+    self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
 
     return YES;
@@ -43,8 +47,9 @@
 #pragma mark Memory management
 
 - (void)dealloc {
-	[navigationController release];
     [viewController release];
+	[navigationController release];
+    
     [window release];
     [super dealloc];
 }

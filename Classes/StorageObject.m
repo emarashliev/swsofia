@@ -111,6 +111,27 @@
     }
 }
 
+//USED IN iOS 6.0 ONLY
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation *newLocation = [locations lastObject];
+    
+    if (!self.lastLocation) {
+        self.lastLocation = newLocation;
+    }
+    
+    if (newLocation.coordinate.latitude != self.lastLocation.coordinate.latitude &&
+        newLocation.coordinate.longitude != self.lastLocation.coordinate.longitude) {
+        self.lastLocation = newLocation;
+        NSLog(@"New location: %f, %f",
+              self.lastLocation.coordinate.latitude,
+              self.lastLocation.coordinate.longitude);
+        [_locationManager stopUpdatingLocation];
+    }
+}
+
+
+
+
 - (CLLocation*)getCurrentLocation {
     NSLog(@"latitude = %f ,longitude = %f", _locationManager.location.coordinate.latitude, _locationManager.location.coordinate.longitude);
     return _locationManager.location;

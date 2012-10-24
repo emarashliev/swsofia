@@ -14,52 +14,15 @@
 -(void)customInitialization;
 @end
 
-@implementation CheckPointViewController(Private)
--(void)releaseAllViews
-{
-    
-    self.mTable =nil;
-}
-
--(void)customInitialization
-{
-
-	self.mCheckPoints = [[NSMutableArray alloc]init];
-}
-
-@end
-
-
-
 @implementation CheckPointViewController
 @synthesize mTable;
 @synthesize mCheckPoints;
 
-//Invoked when the class is instantiated in XIB
--(id)initWithCoder:(NSCoder*)aDecoder
-{
-	self = [super initWithCoder:aDecoder];
-	if( self)
-	{
-		[self customInitialization];
-	}
-	return self;
-}
-
-
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-		[self customInitialization];
-	}
-	return self;
-}
-
-
-
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.mCheckPoints = [[NSMutableArray alloc]init];
 }
 
 
@@ -68,15 +31,12 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView 
 {
-
-    return 1;
-	
+    return 1;	
 }
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section 
 {
-
 	return [mCheckPoints count];
 }
 
@@ -103,28 +63,14 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
 	return 55.0f;
 }
 
-
-- (void)didReceiveMemoryWarning {
-
-    [super didReceiveMemoryWarning];
-    
-}
-
-- (void)viewDidUnload {
-    
-    [super viewDidUnload];
-	[self releaseAllViews];
-}
 
 
 - (void)dealloc {
     
 	[mCheckPoints release];
-	[self releaseAllViews];
     [super dealloc];
 }
 

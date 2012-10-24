@@ -17,10 +17,6 @@
 	UITextField			*txtFieldTo;	//TextField for the Destination city1
 	UIButton			*mLoadDirection;	//Button for moving in next controller ie. GoogleMapController
 	NSMutableArray      *DestinationCityArray;
-    
-    CLLocationCoordinate2D coordinatesFrom;
-    CLLocationCoordinate2D coordinatesTo;
-    
     StorageObject           *storageObject;
     
 }

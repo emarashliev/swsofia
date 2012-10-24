@@ -18,13 +18,13 @@
 @interface MapViewController : UIViewController <UICGDirectionsDelegate,UIWebViewDelegate>
 {
 
-	MapView*			mMap;				// An Instance of SBMapView which holds instance of MKMapView
+	MapView*			_map;				// An Instance of SBMapView which holds instance of MKMapView
 	UICGDirections*		mDirections;		// An Instance of UICGDirections which gives the information of directions
-	NSString*			mStartPoint;		// It will take the name of source city
-	NSString*			mEndPoint;			// It will take the name of source city
+	NSString*			_startPoint;		// It will take the name of source city
+	NSString*			_endPoint;			// It will take the name of source city
 	MapAnnotation*      mBetweenAnnotation;	// An Instance of SBRouteAnnotation which will give the annotations for checkpoints in the route. 
-	UIBarButtonItem*    mLoadBtn;			// button for loading and removing annotations for checkpoints in the route. 
-	NSMutableArray*		mAnnotationArray;	// An array of  annotations for checkpoints in the route.
+	UIBarButtonItem*    _loadBtn;			// button for loading and removing annotations for checkpoints in the route. 
+	NSMutableArray*		_annotationArray;	// An array of  annotations for checkpoints in the route.
     
     NSMutableArray*		myRoutSummary;
 

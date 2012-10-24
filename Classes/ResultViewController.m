@@ -8,9 +8,6 @@
 
 #import "ResultViewController.h"
 #import "GCSimpleSectionController.h"
-#import "GCArraySectionController.h"
-#import "GCCustomSectionController.h"
-#import "GCEmptySectionController.h"
 
 @interface ResultViewController ()
 
@@ -32,15 +29,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    self.title = NSLocalizedString(@"Demo",);
     
     GCSimpleSectionController* simpleController = [[GCSimpleSectionController alloc] initWithViewController:self];
     
     self.retractableControllers = @[simpleController];
     [simpleController release];
-;
-    // Do any additional setup after loading the view from its nib.
 }
 
 
@@ -63,12 +56,6 @@
     return [sectionController didSelectCellAtRow:indexPath.row];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void)dealloc
 {
     self.retractableControllers = nil;
@@ -77,8 +64,4 @@
     [super dealloc];
 }
 
-- (void)viewDidUnload {
-    [self setTebleView:nil];
-    [super viewDidUnload];
-}
 @end
