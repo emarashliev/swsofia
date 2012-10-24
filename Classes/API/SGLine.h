@@ -11,8 +11,8 @@
 @interface SGLine : NSObject
 
 @property (nonatomic, assign, readonly) NSInteger   lineNumber;
-@property (nonatomic, assign, readonly) NSString    *lineType;
-@property (nonatomic, assign, readonly) NSArray     *nextVehicles;
+@property (nonatomic, retain, readonly) NSString    *lineType;
+@property (nonatomic, retain, readonly) NSArray     *nextVehicles;
 
 
 - (id)initWithLineNumber:(NSInteger)vLineNumber type:(NSString*)vType;

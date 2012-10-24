@@ -18,7 +18,6 @@
 		146BBFA2160DE410004CCE02 /* UpAccessory@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF99160DE410004CCE02 /* UpAccessory@2x.png */; };
 		146BBFA3160DE410004CCE02 /* UpAccessoryWhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF9A160DE410004CCE02 /* UpAccessoryWhite.png */; };
 		146BBFA4160DE410004CCE02 /* UpAccessoryWhite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146BBF9B160DE410004CCE02 /* UpAccessoryWhite@2x.png */; };
-		146BBFAA160DFBB8004CCE02 /* ResultViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */; };
 		1D3623260D0F684500981E51 /* MapAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* MapAppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
@@ -48,10 +47,10 @@
 		5E53A28F160EA4B300AFAAE9 /* StorageObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53A28E160EA4B300AFAAE9 /* StorageObject.m */; };
 		5E53A29C160EAAE300AFAAE9 /* DetailcVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E53A29A160EAAE300AFAAE9 /* DetailcVC.m */; };
 		5E53A29D160EAAE300AFAAE9 /* DetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E53A29B160EAAE300AFAAE9 /* DetailsVC.xib */; };
+		5EA83D5A163852EA00D15912 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5EA83D59163852EA00D15912 /* Default-568h@2x.png */; };
 		72237DF71429B23200257B9A /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 72237DF61429B23200257B9A /* MapAnnotation.m */; };
 		727C7ABD143323EE00A5E466 /* CheckPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C7ABB143323EE00A5E466 /* CheckPointViewController.m */; };
 		727C7ABE143323EE00A5E466 /* SBCheckPoints.xib in Resources */ = {isa = PBXBuildFile; fileRef = 727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */; };
-		727C7C3D14334E2D00A5E466 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 727C7C3C14334E2D00A5E466 /* JSONKit.m */; };
 		727E1F35142B04F00048DE8D /* UICGCheckPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 727E1F34142B04F00048DE8D /* UICGCheckPoint.m */; };
 		72AA5C311431A90B00301788 /* UICGRoutes.m in Sources */ = {isa = PBXBuildFile; fileRef = 72AA5C301431A90B00301788 /* UICGRoutes.m */; };
 		72D7844A14220F23009B96E5 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D7843F14220F23009B96E5 /* NSObject+SBJSON.m */; };
@@ -88,7 +87,6 @@
 		146BBF99160DE410004CCE02 /* UpAccessory@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessory@2x.png"; sourceTree = "<group>"; };
 		146BBF9A160DE410004CCE02 /* UpAccessoryWhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UpAccessoryWhite.png; sourceTree = "<group>"; };
 		146BBF9B160DE410004CCE02 /* UpAccessoryWhite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "UpAccessoryWhite@2x.png"; sourceTree = "<group>"; };
-		146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ResultViewController.xib; sourceTree = "<group>"; };
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* MapAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* MapAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAppDelegate.m; sourceTree = "<group>"; };
@@ -129,13 +127,12 @@
 		5E53A299160EAAE300AFAAE9 /* DetailsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsVC.h; sourceTree = "<group>"; };
 		5E53A29A160EAAE300AFAAE9 /* DetailcVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailcVC.m; sourceTree = "<group>"; };
 		5E53A29B160EAAE300AFAAE9 /* DetailsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DetailsVC.xib; path = Classes/DetailsVC.xib; sourceTree = "<group>"; };
+		5EA83D59163852EA00D15912 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		72237DF51429B23200257B9A /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
 		72237DF61429B23200257B9A /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
 		727C7ABA143323EE00A5E466 /* CheckPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckPointViewController.h; sourceTree = "<group>"; };
 		727C7ABB143323EE00A5E466 /* CheckPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckPointViewController.m; sourceTree = "<group>"; };
 		727C7ABC143323EE00A5E466 /* SBCheckPoints.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SBCheckPoints.xib; path = Classes/SBCheckPoints.xib; sourceTree = "<group>"; };
-		727C7C3B14334E2D00A5E466 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
-		727C7C3C14334E2D00A5E466 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		727E1F33142B04F00048DE8D /* UICGCheckPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGCheckPoint.h; sourceTree = "<group>"; };
 		727E1F34142B04F00048DE8D /* UICGCheckPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICGCheckPoint.m; sourceTree = "<group>"; };
 		72AA5C2F1431A90B00301788 /* UICGRoutes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICGRoutes.h; sourceTree = "<group>"; };
@@ -241,6 +238,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				5EA83D59163852EA00D15912 /* Default-568h@2x.png */,
 				141F6697160E3B54002BBCCC /* routs.plist */,
 				141F6699160E3BBD002BBCCC /* fells_loop.gpx */,
 				72237E371429B53100257B9A /* Third Party */,
@@ -380,8 +378,6 @@
 		72D7843414220ECC009B96E5 /* Google Map API */ = {
 			isa = PBXGroup;
 			children = (
-				727C7C3B14334E2D00A5E466 /* JSONKit.h */,
-				727C7C3C14334E2D00A5E466 /* JSONKit.m */,
 				72D7845814220F8F009B96E5 /* UICGDirections.h */,
 				72D7845914220F8F009B96E5 /* UICGDirections.m */,
 				72D7845A14220F8F009B96E5 /* UICGDirectionsOptions.h */,
@@ -413,7 +409,6 @@
 		72D784C2142210B3009B96E5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				146BBFA9160DFBB8004CCE02 /* ResultViewController.xib */,
 				7292F9851434356400EE2EAD /* MapView */,
 			);
 			name = View;
@@ -540,7 +535,6 @@
 				146BBFA2160DE410004CCE02 /* UpAccessory@2x.png in Resources */,
 				146BBFA3160DE410004CCE02 /* UpAccessoryWhite.png in Resources */,
 				146BBFA4160DE410004CCE02 /* UpAccessoryWhite@2x.png in Resources */,
-				146BBFAA160DFBB8004CCE02 /* ResultViewController.xib in Resources */,
 				141F6698160E3B54002BBCCC /* routs.plist in Resources */,
 				141F669A160E3BBD002BBCCC /* fells_loop.gpx in Resources */,
 				5E53A26A160E747500AFAAE9 /* ChooseOptionVC.xib in Resources */,
@@ -559,6 +553,7 @@
 				5E53A28B160E8E7900AFAAE9 /* mainBg@2x.png in Resources */,
 				5E53A28C160E8E7900AFAAE9 /* Defaut@2x.png in Resources */,
 				5E53A29D160EAAE300AFAAE9 /* DetailsVC.xib in Resources */,
+				5EA83D5A163852EA00D15912 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +585,6 @@
 				727E1F35142B04F00048DE8D /* UICGCheckPoint.m in Sources */,
 				72AA5C311431A90B00301788 /* UICGRoutes.m in Sources */,
 				727C7ABD143323EE00A5E466 /* CheckPointViewController.m in Sources */,
-				727C7C3D14334E2D00A5E466 /* JSONKit.m in Sources */,
 				146BBF9C160DE410004CCE02 /* GCRetractableSectionController.m in Sources */,
 				5E53A269160E747500AFAAE9 /* ChooseOptionVC.m in Sources */,
 				5E53A28F160EA4B300AFAAE9 /* StorageObject.m in Sources */,
@@ -618,7 +612,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SBMapWithRoute_Prefix.pch;
 				INFOPLIST_FILE = "SBMapWithRoute-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = SBMapWithRoute;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -636,7 +630,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = SBMapWithRoute_Prefix.pch;
 				INFOPLIST_FILE = "SBMapWithRoute-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = SBMapWithRoute;
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

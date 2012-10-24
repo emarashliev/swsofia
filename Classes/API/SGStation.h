@@ -12,10 +12,10 @@
 @interface SGStation : NSObject
 
 @property (nonatomic, assign) NSInteger                   stationID;
-@property (nonatomic, assign) NSString                    *name;
+@property (nonatomic, retain) NSString                    *name;
 @property (nonatomic, assign) double                      distance;
 @property (nonatomic, assign) CLLocationCoordinate2D      location;
-@property (nonatomic, assign) NSMutableArray /*<SGLine>*/ *lines;
+@property (nonatomic, retain) NSMutableArray /*<SGLine>*/ *lines;
 
 - (id)initAndParseDictionary:(NSDictionary*)dictionary;
 

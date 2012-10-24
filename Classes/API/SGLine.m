@@ -10,6 +10,13 @@
 
 @implementation SGLine
 
+- (void)dealloc {
+    [_lineType release];
+    [_nextVehicles release];
+    
+    [super dealloc];
+}
+
 - (id)initWithLineNumber:(NSInteger)vLineNumber type:(NSString *)vType
 {
     self = [super init];

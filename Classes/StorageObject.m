@@ -104,7 +104,7 @@
     if (newLocation.coordinate.latitude != self.lastLocation.coordinate.latitude &&
         newLocation.coordinate.longitude != self.lastLocation.coordinate.longitude) {
         self.lastLocation = newLocation;
-        NSLog(@"New location: %f, %f",
+        DLog(@"New location: %f, %f",
               self.lastLocation.coordinate.latitude,
               self.lastLocation.coordinate.longitude);
         [_locationManager stopUpdatingLocation];
@@ -122,9 +122,7 @@
     if (newLocation.coordinate.latitude != self.lastLocation.coordinate.latitude &&
         newLocation.coordinate.longitude != self.lastLocation.coordinate.longitude) {
         self.lastLocation = newLocation;
-        NSLog(@"New location: %f, %f",
-              self.lastLocation.coordinate.latitude,
-              self.lastLocation.coordinate.longitude);
+        DLog(@"Location changed: %f, %f", self.lastLocation.coordinate.latitude, self.lastLocation.coordinate.longitude);
         [_locationManager stopUpdatingLocation];
     }
 }
@@ -133,7 +131,7 @@
 
 
 - (CLLocation*)getCurrentLocation {
-    NSLog(@"latitude = %f ,longitude = %f", _locationManager.location.coordinate.latitude, _locationManager.location.coordinate.longitude);
+    DLog(@"latitude = %f ,longitude = %f", _locationManager.location.coordinate.latitude, _locationManager.location.coordinate.longitude);
     return _locationManager.location;
 }
 
@@ -155,10 +153,10 @@
         
         [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:kNotificationGeocoderChanged object:self]];
         
-        NSLog(@"placemarks = %@", placemarks);
-        NSLog(@"Placemark array: %@",_placemark.addressDictionary);
-        NSLog(@"Currently address is: %@",_locatedaddress);
-        NSLog(@"streetName: %@",_streetName );
+        DLog(@"placemarks = %@", placemarks);
+        DLog(@"Placemark array: %@",_placemark.addressDictionary);
+        DLog(@"Currently address is: %@",_locatedaddress);
+        DLog(@"streetName: %@",_streetName );
     }];
 }
 

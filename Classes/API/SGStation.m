@@ -17,14 +17,14 @@
     self = [super init];
     [dictionary retain];
     
-    NSLog(@"dict: %@", dictionary);
+    //NSLog(@"dict: %@", dictionary);
     
     if (self) {
         _stationID  = [dictionary[@"id"] integerValue];
         _distance   = [dictionary[@"dist"] doubleValue];
         _name       = dictionary[@"name"];
         _location   = CLLocationCoordinate2DMake([dictionary[@"lat"] doubleValue], [dictionary[@"lon"] doubleValue]);
-        _lines      = [[[NSMutableArray alloc] init] autorelease];
+        _lines      = [[NSMutableArray alloc] init];
         
         if ( dictionary[@"lines"] != nil )
         {
@@ -50,5 +50,17 @@
     return self;
 }
 
+- (void)dealloc {
+    [_lines release];
+    [_name release];
+    
+    [super dealloc];
+}
+
+- (NSString *)description {
+	//return [NSString stringWithFormat:@"<%@ %p | stationID=%d | Name=%@ | distance=%f | lines=%@ | location {%f, %f}>", [self class], self, self.stationID, self.name, self.distance, self.lines, self.location.latitude, self.location.longitude];
+    
+    return [NSString stringWithFormat:@"<%@ %p | stationID=%d  | distance=%f | lines=%@ | location {%f, %f}>", [self class], self, _stationID, _distance, _lines, _location.latitude, _location.longitude];
+}
 
 @end

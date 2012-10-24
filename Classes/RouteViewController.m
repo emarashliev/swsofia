@@ -43,10 +43,11 @@
     storageObject = [StorageObject sharedStorageObject];
     
     
-    NSLog(@"New location: %f, %f",
+    DLog(@"New location: %f, %f",
           storageObject.lastLocation.coordinate.latitude,
           storageObject.lastLocation.coordinate.longitude);
-	
+    
+    DLog(@"SofiaGoAPI = %@", [SofiaGoAPI stationsAroundMe:storageObject.lastLocation.coordinate]);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
