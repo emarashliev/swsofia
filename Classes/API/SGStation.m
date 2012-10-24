@@ -15,7 +15,7 @@
 - (id)initAndParseDictionary:(NSDictionary*)dictionary
 {
     self = [super init];
-    [dictionary retain];
+    [dictionary retain]; // if we don't retain it we crash.. and if after this retain we release it - CRASH again, so don't release it :D
     
     //NSLog(@"dict: %@", dictionary);
     
@@ -40,7 +40,6 @@
                 
                 [_lines addObject:line];
                 [line release];
-                
             }];
             
             [tmpLines release];

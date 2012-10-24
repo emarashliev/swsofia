@@ -33,4 +33,9 @@
     _nextVehicles = nextVehicles;
 }
 
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"<%@ lineNumber: %d, lineType: %@, nextVehicles: %@ >", [SGLine class], _lineNumber, [NSString stringWithString:_lineType], _nextVehicles];
+}
+
 @end

@@ -36,6 +36,7 @@
             
             [stations setObject:station forKey:[NSString stringWithFormat:@"%d", station.stationID]];
             [station release];
+            [dict release];
         }];
         
         [parser release];
